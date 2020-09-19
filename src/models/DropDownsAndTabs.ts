@@ -6,6 +6,7 @@ import {BsNewspaper} from 'react-icons/bs';
 import {GiSpellBook} from 'react-icons/gi';
 import {AiOutlineUserAdd} from 'react-icons/ai';
 import {MdEventNote} from 'react-icons/md';
+import {GiAchievement} from 'react-icons/gi';
 
 
 export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Array<{tab: string, url: string, pageType: string}> }>= [
@@ -34,7 +35,7 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
                 pageType: 'component'
             },
             {
-                tab: 'Minors in Maths',
+                tab: 'Minors and Double Majors',
                 url: '/academics/minors', 
                 pageType: 'component'
             },
@@ -153,6 +154,22 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
                 url: '/recruitments/project_openings', 
                 pageType: 'component'
             }
+        ]
+    },
+    {
+        title: 'Achievements',
+        icon: GiAchievement,
+        subTitles: [
+            {
+                tab: 'Internships and Placements',
+                url: '/achievements/placements',
+                pageType: 'component'
+            },
+            {
+                tab: 'Awardees',
+                url: '/achievements/awardees',
+                pageType: 'component'
+            },
         ]
     },
     {

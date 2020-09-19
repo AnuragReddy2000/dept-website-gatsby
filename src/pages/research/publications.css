@@ -1,0 +1,122 @@
+.publicationsPage{
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.publicationsColumn{
+    background-color: rgb(250,250,250);
+    padding-right: 3vw;
+    padding-left: 3vw;
+    margin-top: 1vh;
+}
+
+.publicationsYearDropDown{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid rgb(170, 170, 170);
+    height: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 3px;
+}
+
+.publicationPageLine{
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+@media screen and (min-width: 801px){
+    .publicationsYearDropDownListBox{
+        width: 80px;
+        z-index: 3;
+        align-self: flex-end;
+    }
+
+    .publicationsYearDropDownList{
+        text-align: right;
+        background-color: rgb(250,250,250);
+        border: 1px solid rgb(170, 170, 170);
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+
+    .publicationsYearListItem{
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .publicationsYearListItem:hover{
+        background-color: rgb(215, 215, 215);
+    }
+
+    .publicationsPageHeader{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(250,250,250);
+        border: 1px solid rgb(170, 170, 170);
+        margin: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        z-index: 1;
+        position: sticky;
+        top: 12vh;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .publicationsYearDropDownListBox{
+        width: 70px;
+        z-index: 3;
+        align-self: flex-end;
+    }
+
+    .publicationsYearDropDownList{
+        width: 60px;
+        text-align: center;
+        background-color: rgb(250,250,250);
+        border: 1px solid rgb(170, 170, 170);
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+
+    .publicationsPageHeader{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(250,250,250);
+        border: 1px solid rgb(170, 170, 170);
+        margin: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        z-index: 1;
+        position: sticky;
+        top: 12vh;
+        width: 95vw;
+        box-sizing: border-box;
+    }
+}

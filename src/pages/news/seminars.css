@@ -1,0 +1,110 @@
+.seminarPage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.yearDropDown{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid rgb(170, 170, 170);
+    height: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 3px;
+}
+
+@media screen and (min-width: 801px){
+    .yearDropDownListBox{
+        width: 150px;
+        z-index: 3;
+        align-self: flex-end;
+    }
+
+    .yearDropDownList{
+        text-align: right;
+        background-color: rgb(250,250,250);
+        border: 1px solid rgb(170, 170, 170);
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+
+    .yearListItem{
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .yearListItem:hover{
+        background-color: rgb(215, 215, 215);
+    }
+
+    .seminarPageHeader{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(250,250,250);
+        border: 1px solid rgb(170, 170, 170);
+        margin: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        z-index: 1;
+        position: sticky;
+        top: 12vh;
+        width: 99.5%;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .yearDropDownListBox{
+        width: 142px;
+        z-index: 3;
+        align-self: flex-end;
+    }
+
+    .yearDropDownList{
+        width: 120px;
+        text-align: right;
+        background-color: rgb(250,250,250);
+        border: 1px solid rgb(170, 170, 170);
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 6px;
+    }
+
+    .seminarPageHeader{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(250,250,250);
+        border: 1px solid rgb(170, 170, 170);
+        margin: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        z-index: 1;
+        position: sticky;
+        top: 12vh;
+        width: 96vw;
+        box-sizing: border-box;
+    }
+}

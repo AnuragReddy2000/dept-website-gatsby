@@ -43,8 +43,8 @@ class NavSlider extends React.Component<NavSliderProps, NavSliderState>{
                     {DropDownList.map((value,index) =>  <DropDownTab key={index} name={value.title} currentTab={this.props.currentTab} icon={value.icon} currentDropdown={this.state.currentDropDown} onClickEvent={this.props.changeTab} dropDownUpdate={this.changeDropDownTab} contentTabs={value.subTitles}/>)} 
                     <div className='contactUs'>
                         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '100%'}}>
-                            <Link to='/contactUs' style={{textDecoration: 'none', color: 'inherit'}}><p style={{ marginBottom: '3px', alignSelf: 'flex-start'}}>Contact Us </p></Link>
-                            <Link to='/credits' style={{textDecoration: 'none', color: 'inherit'}}><p style={{marginBottom: '3px', alignSelf: 'flex-end'}}>Credits</p></Link>
+                            <Link to='/misc/contactus' style={{textDecoration: 'none', color: 'inherit'}}><p style={{ marginBottom: '3px', alignSelf: 'flex-start'}}>Contact Us </p></Link>
+                            <Link to='/misc/credits' style={{textDecoration: 'none', color: 'inherit'}}><p style={{marginBottom: '3px', alignSelf: 'flex-end'}}>Credits</p></Link>
                         </div>
                         <p style={{ marginBottom: '3px'}}> <a href='https://www.iith.ac.in/' style={{textDecoration: 'none', color: 'inherit'}} target='_blank'>IITH Home</a></p>
                     </div>   
