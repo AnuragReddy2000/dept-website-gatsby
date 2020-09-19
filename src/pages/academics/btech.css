@@ -1,0 +1,18 @@
+@media screen and (max-width: 800px){
+    .bmpInfoContent{
+      display: grid;
+      width: 100%;
+      grid-template-columns: 98%;
+      justify-content: space-between;
+    }  
+}
+  
+@media screen and (min-width: 801px){
+    .bmpInfoContent{
+      margin-top: 1vh;
+      display: grid;
+      width: 100%;
+      grid-template-columns: 32% 32% 32%;
+      justify-content: space-between;
+    }
+}

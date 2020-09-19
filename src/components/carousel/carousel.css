@@ -1,0 +1,81 @@
+@media screen and (max-width: 510px){
+    .carousel{
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 30vh;
+        overflow-y: hidden;
+    }
+    .carouselImage{
+        width: 95%;
+    }
+
+    .carouselButtons{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 511px) and (max-width: 800px){
+    .carousel{
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 50vh;
+        overflow-y: hidden;
+    }
+    .carouselImage{
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1200px){
+    .carousel{
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 50vh;
+        overflow-y: hidden;
+    }
+
+    .carouselImage{
+        width: 85%;
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1600px){
+    .carousel{
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 55vh;
+        overflow-y: hidden;
+    }
+
+    .carouselImage{
+        width: 85%;
+    }
+}
+
+@media screen and (min-width: 1601px){
+    .carousel{
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 50vh;
+        overflow-y: hidden;
+    }
+
+    .carouselImage{
+        width: 85%;
+    }
+}

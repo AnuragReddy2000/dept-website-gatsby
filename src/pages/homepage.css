@@ -1,0 +1,23 @@
+@media screen and (max-width: 800px){
+    .hpInfoContent{
+      display: grid;
+      width: 100%;
+      grid-template-columns: 98%;
+      justify-content: center;
+      align-items: center;
+    }  
+}
+  
+@media screen and (min-width: 801px){
+    .hpInfoContent{
+      margin-top: 1vh;
+      display: grid;
+      width: 100%;
+      grid-template-columns: 49% 49%;
+      justify-content: space-between;
+    }
+}
+
+body{
+  margin: 0;
+}

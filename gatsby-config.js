@@ -14,7 +14,14 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout/layout.tsx`),
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

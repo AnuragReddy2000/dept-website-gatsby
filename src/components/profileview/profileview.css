@@ -1,0 +1,71 @@
+@media screen and (min-width: 361px){
+    .profileViewImage{
+        width: 140px;
+        margin-left: 0.7vw;
+    }    
+
+    .profileView{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
+        background-color: rgb(250,250,250);
+        padding: 3px;
+        margin-top: 2px;
+        margin-bottom: 2vh;
+        box-sizing: border-box;
+    }    
+    .profileViewImageWrap{
+        margin-right: 10px;
+    } 
+}
+
+@media screen and (max-width: 360px){
+    .profileViewImage{
+        width: 180px;
+        margin-left: 2vw;
+        margin-top: 1vh;
+    }
+    
+    .profileView{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        background-color: rgb(250,250,250);
+        padding: 3px;
+        box-sizing: border-box;
+        margin-bottom: 2vh;
+    }   
+    .profileViewImageWrap{
+        align-self: center;
+    } 
+}
+
+.profileViewName{
+    text-align: left;
+    margin-top: 3px;
+    margin-bottom: 2px;
+    font-size: 1.1em;
+    color: darkblue;
+}
+
+.profileViewDesignation{
+    text-align: left;
+    margin-top: 3px;
+    margin-bottom: 2px;
+    font-size: 0.9em;
+}
+
+.profileViewExtras{
+    text-align: left;
+    margin-top: 3px;
+    margin-bottom: 2px;
+    font-size: 0.8em;
+}
