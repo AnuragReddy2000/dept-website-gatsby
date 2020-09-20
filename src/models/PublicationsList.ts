@@ -11,12 +11,12 @@ export const PublicationsList: Record<string , Array<{people: string, name: stri
             details: "Proc. Royal Soc. A  Vol. 476 Article ID: 20190705"
         },
         {
-            people: "H. Ananthnarayan, Neeraj Kumar, and Vivek Mukundan,",
+            people: "H. Ananthnarayan, Neeraj Kumar, and Vivek Mukundan",
             name: "Diagonal Subalgebras of Residual Intersections,",
             details: "Proc. Amer. Math. Soc., (148) 2020, no. 1, pp. 41-52."
         },
         {
-            people: "Neeraj Kumar,",
+            people: "Neeraj Kumar",
             name: "A survey on Koszul algebras and Koszul duality",
             details: "Indian Statistical Institute Series, Springer Singapore. ISSN 2523-3114, pp 157-176. "
         }
@@ -58,17 +58,17 @@ export const PublicationsList: Record<string , Array<{people: string, name: stri
             details: "Proc. Royal Soc. A  Vol. 475 Article ID: 20180365"
         },
         {
-            people: "A.V. Jayanthan and Neeraj Kumar,",
+            people: "A.V. Jayanthan and Neeraj Kumar",
             name: "Syzygies, Betti numbers, and Regularity of cover ideals of certain multipartite graphs,",
             details: "Mathematics, 7 (9), 2019, pp. 1-18, 869."
         },
         {
-            people: "Narasimha Kumar,",
+            people: "Narasimha Kumar",
             name: "A variant of multipicity one theorems for half-integral weight modular forms,",
             details: "Acta Arith.  190  (2019),  no. 1, 75–85"
         },
         {
-            people: "Surjeet Kaushik; Narasimha Kumar,",
+            people: "Surjeet Kaushik; Narasimha Kumar",
             name: "Simultaneous behaviour of the Fourier coefficients of two Hilbert modular cusp forms.",
             details: "Arch. Math. (Basel)  112  (2019),  no. 3, 241–248"
         }
@@ -80,7 +80,7 @@ export const PublicationsList: Record<string , Array<{people: string, name: stri
                 details: " J. Math. Anal. Appl. 468 (2018), no. 1, 567-583."
             },
             {
-                people: "H. Kulkarni, S.; Ramesh, G.; ", 
+                people: "H. Kulkarni S, Ramesh G.", 
                 name: "On the denseness of minimum attaining operators.", 
                 details: " Oper. Matrices 12 (2018), no. 3, 699–709. "
             },     
@@ -90,22 +90,22 @@ export const PublicationsList: Record<string , Array<{people: string, name: stri
                 details: " J. Math. Anal. Appl. 465 (2018), no. 1, 547–556."
             },
             {
-                people: "  B. S. Chandra, C. S. Sastry, L. Anumandla and S. Jana, ", 
+                people: "  B. S. Chandra, C. S. Sastry, L. Anumandla and S. Jana ", 
                 name: "Dictionary-based monitoring of premature ventricular contractions: An ultra-low-cost point-of-care service ", 
                 details: ", Artificial Intelligence in Medicine, 2018, Accepted. "
             },
             {
-                people: " Prasad T., P. U. Praveen Kumar, C. S. Sastry, P. V. Jampana, ", 
+                people: " Prasad T., P. U. Praveen Kumar, C. S. Sastry, P. V. Jampana ", 
                 name: " Reconstruction of sparseview tomography via preconditioned Radon sensing matrix ", 
                 details: ", J. Appl. Math. Comput., 2018, Accepted. "
             },
             {
-                people: "Ganesh, Jadav ,Ramesh, Golla, Sukumar, Daniel,  ", 
+                people: "Ganesh, Jadav ,Ramesh, Golla, Sukumar, Daniel  ", 
                 name: "Perturbation of minimum attaining operators", 
                 details: " Adv. Oper. Theory, 3, 2018, 473-490. "
             },
             {
-                people: "Banerjee. P, ", 
+                people: "Banerjee. P ", 
                 name: "On Galois groups of a one-parameter family of orthogonal polynomials", 
                 details: ",Acta. Arith., 183, 2018,  1 - 34. "
             },
@@ -115,22 +115,22 @@ export const PublicationsList: Record<string , Array<{people: string, name: stri
                 details: " Operators and matrices, 2018, 12(1), 19-25. "
             },
             {
-                people: "Venku Naidu D , Partha Sarathi Patra, Sivaramakrishnan C, ", 
+                people: "Venku Naidu D , Partha Sarathi Patra, Sivaramakrishnan C ", 
                 name: "Benedicks' theorem forthe Weyl Transform associated with the Heisenberg group ", 
                 details: ", Integral Transforms andSpecial Functions, 29, 2018, 442–449. "
             },
             {
-                people: "Kumar, Narasimha, ", 
+                people: "Kumar, Narasimha ", 
                 name: "On the gaps between non-zero Fourier coefficients of cusp formsof higher weight", 
                 details: ", The Ramanujan Journal, 45, 2018, 95-109."
             },
             {
-                people: "Kaushik, Surjeet , Kumar, Narasimha,", 
+                people: "Kaushik, Surjeet , Kumar, Narasimha", 
                 name: "On the gaps between non-zero Fouriercoefficients of eigenforms with CM", 
                 details: " International Journal of Number Theory, 14,2018, 95--101."
             },
             {
-                people: "Kashik, Surjeet; Kumar, Narasimha , Tanabe, Naomi. ", 
+                people: "Kashik, Surjeet; Kumar, Narasimha , Tanabe, Naomi ", 
                 name: " Equidistribution of signs forHilbert modular forms of half-integral weight", 
                 details: " Research in Number Theory, 4, 2018,  4- 13."
             }
@@ -142,22 +142,22 @@ export const PublicationsList: Record<string , Array<{people: string, name: stri
                 details: " The Journal of Analysis, 25, 2017, 65–81. "
             },
             {
-                people: "Ramesh G , ", 
+                people: "Ramesh G ", 
                 name: " On the numerical radius of quaternionic normal operator, ", 
                 details: " Advances in Operator Theory, 2, 2017, 78 - 86. "
             },
             {
-                people: "Ramesh G. and Santhosh Kumar  ,  ", 
+                people: "Ramesh G. and Santhosh Kumar ", 
                 name: " Borel functional calculus for quaternionic normaloperators  ", 
                 details: " J. Math. Phys, 58, 2017, 65 - 81. "
             },
             {
-                people: "Venku Naidu D , D. Sukumar , Sivaramakrishnan C, ", 
+                people: "Venku Naidu D , D. Sukumar , Sivaramakrishnan C ", 
                 name: "On the images of Dunk-Sobolevspaces under Schrodinger semigroup associated to Dunkl operators ", 
                 details: " J. Pseudo-Differ.Oper. Appl., 2017, Accepted. "
             },
             {
-                people: "D. Sukumar and S. Veeramani,",
+                people: "D. Sukumar and S. Veeramani",
                 name: "Level sets of the condition spectrum,",
                 details: "Ann. Funct. Anal., 8, (3), 2017, 314-328. "
             },

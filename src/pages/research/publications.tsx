@@ -55,7 +55,7 @@ class PublicationsPage extends React.Component<PublicationsPageProps,Publication
                 </div> : null}
                 <div className='publicationsColumn'>
                     {publications.map(item => <div className='publicationPageLine'>
-                        <BsDot size={32}/><p style={{width: '95%'}}> {item.people + ' '} <i style={{color:'darkblue'}}>{item.name}</i> {' ' + item.details}</p>
+                        <BsDot size={32}/><p style={{width: '95%'}}> {item.people + ', '} <i style={{color:'darkblue'}}>{item.name}</i> {' ' + item.details}</p>
                     </div>)}
                 </div>
         </div>

@@ -14,7 +14,7 @@ import Satya from '../images/people/faculty/Satya.jpg';
 import SukuSirImg from '../images/people/faculty/SukuSirImg.jpg';
 import TPaul from '../images/people/faculty/TPaul.jpg';
 import Venku from '../images/people/faculty/Venku.jpg';
-import generic from '../images/people/faculty/generic.png';
+import PAL from '../images/people/faculty/PAL.png';
 
 export const FacultyDataList: Array<{name: string, data: PersonInfo}>= [
     {
@@ -23,7 +23,7 @@ export const FacultyDataList: Array<{name: string, data: PersonInfo}>= [
     },
     {
         name: 'Dr. Anantha Lakshmi Narayana P',
-        data: new PersonInfo('Dr. Anantha Lakshmi Narayana P', 'Associate Professor',generic ,'Convection in Porous Media', ' ananth@math.iith.ac.in', 'C-502', 'http://www.iith.ac.in/~ananth/')
+        data: new PersonInfo('Dr. Anantha Lakshmi Narayana P', 'Associate Professor',PAL,'Convection in Porous Media', ' ananth@math.iith.ac.in', 'C-502', 'http://www.iith.ac.in/~ananth/')
     },
     {
         name: 'Dr. Balasubramaniam Jayaram',

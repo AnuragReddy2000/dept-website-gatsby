@@ -30,6 +30,9 @@ class AlumniPage extends React.Component{
                         {value.students.map(person => <div className='AlumniName'><BsDot size={20}/><p style={{width:'95%'}}><i>{person.name}</i></p></div>)}
                     </div>    
                 </div>)}
+                <div>
+                    <p>More </p>
+                </div>
             </div>
         )
     }

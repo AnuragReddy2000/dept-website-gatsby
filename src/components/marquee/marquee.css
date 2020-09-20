@@ -1,4 +1,5 @@
-.marquee{
+@media screen and (max-width: 800px){
+  .marquee{
     width: 100%;
     height: 5vh;
     line-height: 2vh;
@@ -28,4 +29,10 @@
     0%   { transform: translate(0, 0); }
     100% { transform: translate(-100%, 0); }
   }
-  
+}
+
+@media screen and (min-width: 801px){
+  .marquee{
+    display: none;
+  }
+}

@@ -51,21 +51,30 @@
 .profileViewName{
     text-align: left;
     margin-top: 3px;
-    margin-bottom: 2px;
-    font-size: 1.1em;
+    margin-bottom: 6px;
+    font-size: 1.2em;
     color: darkblue;
 }
 
 .profileViewDesignation{
     text-align: left;
-    margin-top: 3px;
-    margin-bottom: 2px;
-    font-size: 0.9em;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-size: 1em;
+    font-style: italic;
+}
+
+.profileViewArea{
+    text-align: left;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-size: 1em;
 }
 
 .profileViewExtras{
     text-align: left;
-    margin-top: 3px;
-    margin-bottom: 2px;
-    font-size: 0.8em;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-size: 0.9em;
+    color: rgb(50,50,50);
 }

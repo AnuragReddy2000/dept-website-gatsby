@@ -1,3 +1,4 @@
+require("typeface-lato");
 /**
  * Implement Gatsby's Browser APIs in this file.
  *

@@ -1,51 +1,51 @@
-.mobileSlider{
-    width: 75vw;
-    z-index: 10;
-    height: 85vh;
-    background-color: rgb(250, 250, 250);
-    border-right: 1px solid rgb(236, 236, 236);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 2px;
-    padding-right: 0px;
-    padding-left: 3vw;
-    box-sizing: border-box;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    position: fixed;
-    position: -webkit-fixed;
-    top: 10vh;
+@media screen and (max-width: 800px){
+    .Slider{
+        width: 75vw;
+        z-index: 10;
+        height: 85vh;
+        background-color: rgb(250, 250, 250);
+        border-right: 1px solid rgb(236, 236, 236);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 2px;
+        padding-right: 0px;
+        padding-left: 3vw;
+        box-sizing: border-box;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        position: fixed;
+        position: -webkit-fixed;
+        top: 10vh;
+    }    
 }
 
-.desktopSlider{
-    box-sizing: border-box;
-    width: 18vw;
-    padding-left: 1.5vw;
-    padding-right: 0px;
-    z-index: 1;
-    height: 90vh;
-    background-color: rgb(250, 250, 250);
-    border-right: 1px solid rgb(236, 236, 236);
-    box-shadow: 1px 1px 1px rgb(236, 236, 236);
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 2px;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 10vh;
-    box-sizing: border-box;
+@media screen and (min-width: 801px){
+    .Slider{
+        box-sizing: border-box;
+        width: 18vw;
+        padding-left: 1.5vw;
+        padding-right: 0px;
+        z-index: 1;
+        height: 90vh;
+        background-color: rgb(250, 250, 250);
+        border-right: 1px solid rgb(236, 236, 236);
+        box-shadow: 1px 1px 1px rgb(236, 236, 236);
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        padding-top: 2px;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 10vh;
+        box-sizing: border-box;
+    }
 }
 
-.desktopSlider::-webkit-scrollbar{
-    display: none;
-}
-
-.mobileSlider::-webkit-scrollbar{
+.Slider::-webkit-scrollbar{
     display: none;
 }
 
@@ -64,7 +64,8 @@
 }
 
 @media screen and (min-width: 1500px){
-    .desktopSlider{
+    .Slider{
         width: 16vw;
     }
 } 
+

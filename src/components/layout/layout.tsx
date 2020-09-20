@@ -10,7 +10,6 @@ import {BsCaretLeftFill} from 'react-icons/bs';
 interface LayoutProps {}
 
 interface LayoutState {
-  layoutType: string;
   showSlider: boolean;
   currentTab: string;
   showAnnouncements: boolean;
@@ -22,22 +21,13 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
     super(props, state);
     this.state = {
       showAnnouncements: false,
-      layoutType: (window.outerWidth > 800)? 'desktop':'mobile',
       showSlider: false,
       currentTab: 'Home'
     }
-    console.log(window.outerWidth);
     this.pageRef = React.createRef();
-    window.addEventListener("resize",this.changeLayoutType);
   }
 
   pageRef : any
-
-  changeLayoutType = (): void => {
-    this.setState({
-      layoutType: (window.outerWidth > 800)? 'desktop':'mobile'
-    })
-  }
 
   changeTab = (tab: string):void =>{
     this.setState({
@@ -78,9 +68,11 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
     return (
       <Swipeable onSwipedRight={this.swipeShowSlider} onSwipedLeft={this.swipeRemoveSlider}>
         <div className='page' ref={this.pageRef}>
-          <TitleBar layoutType={this.state.layoutType} toggleShowSlider={this.toggleShowSlider}></TitleBar>
+          <TitleBar toggleShowSlider={this.toggleShowSlider}></TitleBar>
           <div className='pageBody'>
-            {(this.state.layoutType === 'mobile' && !this.state.showSlider) ? null :  <NavSlider layoutMode={this.state.layoutType} currentTab={this.state.currentTab} changeTab={this.changeTab}/>}
+            <div className={(this.state.showSlider)? 'showNav':'hideNav'}>
+              <NavSlider currentTab={this.state.currentTab} changeTab={this.changeTab}/>
+            </div>
             <div className='bodyContent'>
               <div style={{width: this.state.showAnnouncements ? '100%' : '95%'}}>
                 {this.props.children}
@@ -99,7 +91,7 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
             </div>
             }
           </div>
-          {this.state.layoutType==='mobile' ? <Marquee /> : null}
+          <Marquee />
         </div>
       </Swipeable>
     );
