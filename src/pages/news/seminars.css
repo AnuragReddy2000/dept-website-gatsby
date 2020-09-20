@@ -64,9 +64,13 @@
         z-index: 1;
         position: sticky;
         top: 12vh;
-        width: 99.5%;
+        width: 100%;
         box-sizing: border-box;
-        height: 50px;
+        height: 55px;
+    }
+
+    .seminarLists{
+        margin-top: 1vh;
     }
 }
 

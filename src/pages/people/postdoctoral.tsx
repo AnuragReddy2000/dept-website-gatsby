@@ -12,7 +12,7 @@ class PostDoctoralPage extends React.Component{
                     <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>Post Doctoral Fellows:</p>
                 </div>
                 <div className='pdinfoContent'>
-                    {PostDoctoralList.map(value => <ProfileView Name={value.name} email={'Email: ' + value.email} Area={'Areas of Interest: ' + value.area} supervisor={'Mentor: ' + value.mentor} Image={value.image} periodOfStay={'Period of Stay: ' + value.stay} link={value.link}/>)}
+                    {PostDoctoralList.map(value => <ProfileView Name={value.name} email={value.email} Area={value.area} supervisor={'Mentor: ' + value.mentor} Image={value.image} periodOfStay={'Period of Stay: ' + value.stay} link={value.link}/>)}
                 </div>
                 <hr/>
                 <div style={{width: '100%', boxSizing: 'border-box', margin: '3px', padding: '5px'}}>

@@ -15,7 +15,7 @@ class AlumniPage extends React.Component{
                     <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>PhD Alumni:</p>
                 </div>
                 <div className='aluminfoContent'>
-                    {PhDAlumniList.map(value => <ProfileView Name={value.name} email={'Email: ' + value.email} Area={'Area of Research: ' + value.area} supervisor={'Supervisor: ' + value.mentor} Image={value.image} extraDetails={value.currentPos=="" ? [] : ['Current Position: ' + value.currentPos]}/>)}
+                    {PhDAlumniList.map(value => <ProfileView Name={value.name} email={value.email} Area={value.area} supervisor={'Supervisor: ' + value.mentor} Image={value.image} extraDetails={value.currentPos=="" ? [] : ['Current Position: ' + value.currentPos]}/>)}
                 </div>
                 <div style={{width: '100%', boxSizing: 'border-box', margin: '3px', padding: '5px'}}>
                     <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>M.Sc Alumni:</p>
@@ -31,7 +31,7 @@ class AlumniPage extends React.Component{
                     </div>    
                 </div>)}
                 <div>
-                    <p>More </p>
+                    <p>More information regarding the Alumni can be found <a href='https://docs.google.com/spreadsheets/d/1eD041NjuL71c4_bS6W1f-9rbgvfPucSxbZ5tpKTr8rs/edit#gid=0' target='_blank'>here</a></p>
                 </div>
             </div>
         )

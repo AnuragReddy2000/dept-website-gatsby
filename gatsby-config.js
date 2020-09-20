@@ -25,12 +25,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Department of Mathematics`,
+        short_name: `Dmaths`,
         start_url: `/`,
-        background_color: `	#000000`,
-        theme_color: `	#000000`,
-        display: `minimal-ui`,
+        background_color: `#fafafa`,
+        theme_color: `#fafafa`,
+        display: `standalone`,
         icon: `src/images/dmath_logo_circle.png`, // This path is relative to the root of the site.
       },
     },

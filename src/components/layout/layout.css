@@ -1,14 +1,16 @@
 body{
-    height: 100%;
-    overflow-y: auto;
-    font-family: 'Lato';
+  height: 100vh;
+  overflow-y: auto;
+  font-family: 'Lato';
+  top: 0px;
+  position: fixed;
 }
 .page{
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
-    position: relative;
-    overflow-y: scroll;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  position: relative;
+  overflow-y: scroll;
 }
   
 .bodyContent{

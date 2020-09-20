@@ -55,7 +55,9 @@ class SeminarPage extends React.Component<SeminarPageProps,SeminarPageState>{
                         <p onClick={() => this.changeYear('2013 and older')} className='yearListItem'>2013 and older</p>
                     </div>
                 </div> : null}
-                {seminarList.map(value => <TableView title={value['Topic']} sno={value['S.No']} speaker={'Speaker :  ' + value['Speaker']} content={value['Abstract']} dateVenue={value['Date & Venue']}/>)}
+                <div className='seminarLists'>
+                    {seminarList.map(value => <TableView title={value['Topic']} sno={value['S.No']} speaker={value['Speaker']} content={value['Abstract']} dateVenue={value['Date & Venue']}/>)}
+                </div>
             </div>
         )
     }
