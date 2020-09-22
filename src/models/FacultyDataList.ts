@@ -4,7 +4,7 @@ import BalaSirImg from '../images/people/faculty/BalaSirImg.jpg';
 import BhusanSirImg from '../images/people/faculty/BhusanSirImg.jpg';
 import ChallaSirImg from '../images/people/faculty/ChallaSirImg.jpg';
 import DGhosh from '../images/people/faculty/DGhosh.jpg';
-import Mrinmoy from '../images/people/faculty/Mrinmoy.png';
+import Mrinmoy from '../images/people/faculty/Mrinmoy.jpg';
 import NarasimhaSirImg from '../images/people/faculty/NarasimhaSirImg.jpg';
 import Neeraj from '../images/people/faculty/Neeraj.jpg';
 import PradiptoSirImg from '../images/people/faculty/PradiptoSirImg.jpg';
@@ -59,7 +59,7 @@ export const FacultyDataList: Array<{name: string, data: PersonInfo}>= [
     },
     {
         name: 'Dr. Sameen Naqvi',
-        data: new PersonInfo('Dr. Sameen Naqvi', 'Assistant Professor', Sameen,'Reliability Theory, Stochastic Orders, Applied Statistics, Risk Theory', '  sameen@math.iith.ac.in', ' C-312/A', 'https://math.iith.ac.in/People/faculty.html#')
+        data: new PersonInfo('Dr. Sameen Naqvi', 'Assistant Professor', Sameen,'Reliability Theory, Stochastic Orders, Applied Statistics, Risk Theory', '  sameen@math.iith.ac.in', ' C-312/A', 'https://www.sameennaqvi.com/')
     },
     {
         name: 'Dr. Satya Prakash Singh',

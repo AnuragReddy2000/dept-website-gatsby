@@ -1,9 +1,6 @@
 import React from 'react';
 import Carousel from '../../components/carousel/carousel';
 import InfoView from '../../components/infoview/infoview';
-import Brochure from '../../images/academics/btechMnC/Brochure.png';
-import curriculum from '../../images/academics/btechMnC/curriculum.png';
-import faq from '../../images/academics/btechMnC/faq.png';
 import {CarouselPics} from '../../models/CarouselPics';
 import './btech.css'
 
@@ -25,21 +22,18 @@ class BtechMnCPage extends React.Component{
                 <div className='bmpInfoContent'>
                     <InfoView 
                     title='Brochure:' 
-                    image={Brochure} 
                     info={['Wondering what is B.Tech (M&C) or why do B.Tech (M&C) at IIT Hyderabad? Click on the icon above or the link below to know all the details about the programme at a glance.']}
-                    link = 'https://math.iith.ac.in/Academics/btech_mnc_brochure.pdf'
+                    link = ''
                     linkText = 'Link to the Brochure'
                     />
                     <InfoView 
                     title='Curriculum:' 
-                    image={curriculum} 
                     info={['The entire course curriculum for the programme along with the list of electives can be found under the following link.']}
-                    link = 'https://math.iith.ac.in/Academics/btech_mnc_curriculum.pdf'
+                    link = '/pdfs/BtechCurriculum2020.pdf'
                     linkText = 'Link to the Curriculum'
                     />
                     <InfoView 
                     title='FAQs:' 
-                    image={faq} 
                     info={['Still have some questions unanswered? Or, some lingering doubts? Check out our FAQ page - who knows, you may only be replicating the neuronal state some one else was in not long ago !']}
                     link = 'https://math.iith.ac.in/Academics/btech_mnc_faq.html'
                     linkText = 'Link to FAQs'

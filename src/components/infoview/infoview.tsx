@@ -24,7 +24,7 @@ class InfoView extends React.Component<InfoViewProps>{
                     <img src={this.props.image} width='100%' height='100%'/>
                 </div>
                 {this.props.info.map((element, index) => <p key={index} className='content'>{element}</p>)}
-                <p style={{alignSelf: 'flex-start'}}><a href={this.props.link}>{this.props.linkText}</a></p>
+                <p style={{alignSelf: 'flex-start', marginTop:'auto'}}><a href={this.props.link} target='_blank'>{this.props.linkText}</a></p>
             </div>
         )
     }

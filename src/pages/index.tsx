@@ -2,8 +2,6 @@ import React from 'react';
 import Carousel from '../components/carousel/carousel';
 import InfoView from '../components/infoview/infoview';
 import {CarouselPics} from '../models/CarouselPics';
-import AboutImg11 from '../images/homePage/AboutImg11.png';
-import AboutImg2 from '../images/homePage/AboutImg2.png';
 import './homepage.css';
 
 class Homepage extends React.Component{
@@ -23,17 +21,15 @@ class Homepage extends React.Component{
                 <div className='hpInfoContent'>
                     <InfoView 
                     title='Teaching Fulcrum' 
-                    image={AboutImg11} 
                     info={['As one of the basic science departments, the department remains as the fulcrum of teaching that offers many foundational math courses for the entire community of students at IIT Hyderabad.',
-                    'The department further offers a minor in Mathematics for the undergrad students.',
                     'From the academic year 2017-18, the department has started to offer a new undergrad programme called the B.Tech (Math and Computing).',
                     'The Master of Science programme of the department allows specialisation in two streams, viz., Theoretical Mathematics and Applied Math and Computing.',
-                    'The vibrant doctoral programme of the department attracts students of varied interests and has been successful in creating researchers who are well-prepared to enter both the academia and the industry.'
+                    'The vibrant doctoral programme of the department attracts students of varied interests and has been successful in creating researchers who are well-prepared to enter both the academia and the industry.',
+                    'The department further offers a minor in Mathematics for the undergrad students.',
                     ]}
                     />
                     <InfoView 
                     title='Leverageable Research' 
-                    image={AboutImg2} 
                     info={['The Department has young and dedicated faculty working both in pure and applied branches of Mathematics who actively collaborate with their counterparts from within and outside the department.',
                     'Faculty members have achieved many distinctions - for instance, they have been invited to be part of research committees of the Government of India, are established resource personnels in programmes promoting both basic and advanced Mathematics and are members of the editorial board of reputed journals.']}
                     />

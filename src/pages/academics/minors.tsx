@@ -1,9 +1,5 @@
 import React from 'react';
-import Carousel from '../../components/carousel/carousel';
 import InfoView from '../../components/infoview/infoview';
-import {CarouselPics} from '../../models/CarouselPics';
-import {MinorsCourses} from '../../models/MinorsCourses';
-import TableView from '../../components/tableview/tableview';
 
 class Minors extends React.Component{
 
@@ -20,8 +16,10 @@ class Minors extends React.Component{
                 <InfoView 
                 title='Double major in B.Tech (Maths and Computing):'
                 titleColor='darkblue'
-                info={["The department of Mathematics offers a Major in Mathematics and Computing for a B.Tech student who takes courses worth 24 credits as prescribed below:","The following courses totaling 12 credits are mandatory.\n\nMA4010  Analysis of Functions of a Single Variable\nMA4020  Linear Algebra\nMA4060  Complex Analysis\nMA4070  Algebra I - Groups and Rings","The other 12 credits can be taken from any of the 5 or 6 level courses.","Given below are a list of various courses available to the students to choose from:"]}/>
-                {MinorsCourses.map(value => <TableView title={value['CourseName']} content={value['Syllabus']} sno={value['CourseCode']} overrideSnoWidth='30%'/>)}
+                info={["The department of Mathematics offers a Major in Mathematics and Computing for a B.Tech student who takes courses worth 24 credits as prescribed below:","The following courses totaling 12 credits are mandatory.\n\n - MA4010  Analysis of Functions of a Single Variable\n - MA4020  Linear Algebra\n - MA4060  Complex Analysis\n - MA4070  Algebra I - Groups and Rings","The other 12 credits can be taken from any of the 5 or 6 level courses."]}/>
+                <div style={{width:'100%', textAlign:'center'}}>
+                    <p>The courses offered by our department can be found <a href='https://www.iith.ac.in/academics/assets/files/pdf/20200227-Courses-of-Study-Bachelors.pdf' target='_blank'>here</a></p>
+                </div>
             </div>
         )
     }

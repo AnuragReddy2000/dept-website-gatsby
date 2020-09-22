@@ -2,8 +2,6 @@ import React from 'react';
 import Carousel from '../../components/carousel/carousel';
 import InfoView from '../../components/infoview/infoview';
 import {CarouselPics} from '../../models/CarouselPics';
-import Brochure from '../../images/academics/btechMnC/Brochure.png';
-import curriculum from '../../images/academics/btechMnC/curriculum.png';
 import './msc.css';
 
 class MScPage extends React.Component{
@@ -24,16 +22,14 @@ class MScPage extends React.Component{
                 <div className='mscInfoContent'>
                     <InfoView 
                     title='Brochure' 
-                    image={Brochure} 
                     info={['Wondering why do M.Sc at IIT Hyderabad? Click on the icon above or the link below to know all the details about the programme at a glance.']}
-                    link='https://math.iith.ac.in/Academics/msc_brochure.pdf'
+                    link='/pdfs/msc_brochure.pdf'
                     linkText='Link to the Brochure'
                     />
                     <InfoView 
                     title='Curriculum' 
-                    image={curriculum} 
                     info={['The entire course curriculum for the programme along with the list of electives can be found under the following link.']}
-                    link='https://math.iith.ac.in/Academics/M.Sc_Curriculum_2020_onwards1.pdf'
+                    link='/pdfs/MscCurriculum2020.pdf'
                     linkText='Link to the Curriculum'
                     />
                 </div>

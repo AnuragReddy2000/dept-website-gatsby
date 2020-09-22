@@ -82,8 +82,13 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
                 pageType: 'component'
             },
             {
-                tab: 'Alumni',
-                url: '/people/alumni', 
+                tab: 'B.Tech & M.Sc',
+                url: '/people/btech_msc', 
+                pageType: 'component'
+            }, 
+            { 
+                tab: 'Doctoral Students',
+                url: '/people/doctoral', 
                 pageType: 'component'
             },
             { 
@@ -91,16 +96,11 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
                 url: '/people/postdoctoral', 
                 pageType: 'component'
             },
-            { 
-                tab: 'Doctoral Students',
-                url: '/people/doctoral', 
+            {
+                tab: 'Alumni',
+                url: '/people/alumni', 
                 pageType: 'component'
             },
-            {
-                tab: 'B.Tech & M.Sc',
-                url: '/people/btech_msc', 
-                pageType: 'component'
-            }, 
         ]
     },
     {
@@ -110,6 +110,11 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
             {
                 tab: 'Seminars',
                 url: '/news/seminars', 
+                pageType: 'component'
+            },
+            {
+                tab: 'Student Seminars',
+                url: '/news/studentseminars', 
                 pageType: 'component'
             },
             {

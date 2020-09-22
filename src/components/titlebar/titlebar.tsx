@@ -1,8 +1,8 @@
 import React from 'react';
 import './titleBar.css';
 import {MdMenu} from'react-icons/md';
-import iithlogo from '../../images/homePage/iithlogo.png';
-import deptTitleSmall from '../../images/homePage/deptTitleSmall.png';
+import iithlogo from '../../images/homePage/iithlogo.jpg';
+import deptTitleSmall from '../../images/homePage/deptTitleSmall.jpg';
 import deptTitleLarge from '../../images/homePage/deptTitleLarge.png';
 
 interface TitleBarState{

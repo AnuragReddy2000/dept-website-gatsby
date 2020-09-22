@@ -24,6 +24,10 @@
 }
   
 @media screen and (max-width: 800px){
+    .titleBar{
+      justify-content: center;
+    }
+
     .menuIcon{
       z-index: 3;
       margin-right: 6px;
@@ -36,6 +40,7 @@
   
     .titleImageSmall{
       object-fit: scale-down;
+      align-self: center;
     }
 
     .titleImageLarge{

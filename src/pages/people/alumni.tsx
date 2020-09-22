@@ -31,7 +31,7 @@ class AlumniPage extends React.Component{
                     </div>    
                 </div>)}
                 <div>
-                    <p>More information regarding the Alumni can be found <a href='https://docs.google.com/spreadsheets/d/1eD041NjuL71c4_bS6W1f-9rbgvfPucSxbZ5tpKTr8rs/edit#gid=0' target='_blank'>here</a></p>
+                    <p>More information regarding the Alumni can be found <a href='https://docs.google.com/spreadsheets/d/1eD041NjuL71c4_bS6W1f-9rbgvfPucSxbZ5tpKTr8rs/edit?usp=sharing' target='_blank'>here</a></p>
                 </div>
             </div>
         )
