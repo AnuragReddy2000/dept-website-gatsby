@@ -7,6 +7,7 @@ interface ProfileViewProps{
     Designation?: string;
     Area?: string;
     RoomNo?: string;
+    phone?: string;
     email?: string;
     link?: string;
     supervisor?: string;
@@ -30,6 +31,7 @@ class ProfileView extends React.Component<ProfileViewProps>{
                     {this.props.extraDetails?.map(detail => <p className='profileViewExtras'>{detail}</p>)}
                     {(this.props.email !== undefined) ? <p className='profileViewExtras'>{'Email: '}<a href={'mailto: ' + this.props.email} style={{fontStyle: "italic", textDecoration: "none", color: "inherit"}}>{this.props.email}</a></p> : null}
                     {(this.props.RoomNo !== undefined) ? <p className='profileViewExtras'>{this.props.RoomNo}</p> : null}
+                    {(this.props.phone !== undefined) ? <p className='profileViewExtras'>{this.props.phone}</p> : null}
                     {(this.props.periodOfStay !== undefined) ? <p className='profileViewExtras'>{this.props.periodOfStay}</p> : null}
                     {(this.props.link !== undefined) ? <p className='profileViewExtras'><a href={this.props.link}>Link to website</a> </p> : null}
                 </div>

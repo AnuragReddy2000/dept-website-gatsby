@@ -3,6 +3,7 @@ import {Seminars} from '../../models/Seminars';
 import TableView from '../../components/tableview/tableview';
 import './seminars.css';
 import {AiFillCaretDown} from 'react-icons/ai';
+import {Helmet} from 'react-helmet';
 
 interface SeminarPageState{
     currentYear: string
@@ -38,6 +39,9 @@ class SeminarPage extends React.Component<SeminarPageProps,SeminarPageState>{
 
         return(
             <div className='seminarPage'>
+                <Helmet>
+                    <title>Dmath - Seminars</title>
+                </Helmet>
                 <div className='seminarPageHeader'>
                     <p style={{fontSize:'x-large', marginTop:'1px', marginBottom:'1px', color:'darkblue'}}>Seminars:</p>
                     <div className='yearDropDown' onClick={this.toggleDropDown}>

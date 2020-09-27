@@ -77,22 +77,3 @@
     align-items: center;
     box-sizing: border-box;
 }
-
-.toolTipText{
-    display: none;
-    visibility: hidden;
-    background-color: rgb(216, 216, 216);
-    color: black;
-    text-align: center;
-    border-radius: 6px;
-    font-size: small;
-    padding: 2px;
-    margin: 2px;
-    position: absolute;
-    z-index: 1;
-}
-
-.studentName:hover .toolTipText{
-    display: block;
-    visibility: visible;
-}

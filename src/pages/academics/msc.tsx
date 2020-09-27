@@ -3,20 +3,26 @@ import Carousel from '../../components/carousel/carousel';
 import InfoView from '../../components/infoview/infoview';
 import {CarouselPics} from '../../models/CarouselPics';
 import './msc.css';
+import {Helmet} from 'react-helmet';
 
 class MScPage extends React.Component{
 
     render(){
         return(
             <div>
+                <Helmet>
+                    <title>Dmath - MSc</title>
+                </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh', whiteSpace: 'pre-line'}}>
-                    <Carousel images={CarouselPics['MSc']} imagesNum={CarouselPics['MSc'].length}/>
                     <InfoView 
                     title='Master of Sciences: ' 
                     titleColor='darkblue'
                     info={['The department has been running a Master of Sciences programme since the academic year 2013 - 14 with specialisation in two streams, viz., ‘Mathematics’ and ‘Mathematics and Computing.’ ', 
-                    'The aim of this programme is two-fold: \n(i) to produce students with good-firm background in both theoretical and Applied Mathematics, supplemented with the required computational skills, \n(ii) to offer the students the flexibility to pursue higher studies or to orient themselves towards a career in the industry. ',
-                    'For more on this programme please explore the following links:']}
+                    'The objective of the M.Sc Mathematics program is to provide students with a strong theoretical background in mathematics for pursuing research in both pure and applied mathematics.',
+                    'The M.Sc Mathematics and Computing program aims to produce students with a good-firm background in theoretical and applied mathematics, supplemented with the required computational skills. Students have the flexibility to pursue higher studies or orient themselves towards a career in the industry.',
+                    'Salient features of the M.Sc program:',
+                    '- The first semester is common to both the streams. \n - Freedom to choose between two streams: Mathematics or Mathematics and Computing. \n - Streams based on the electives chosen in the 2nd–4th semesters. \n - Sufficient emphasis on building a firm foundational knowledge. \n - Exposure to research through mandatory project work for all students. \n - Students are free to pursue interests in both streams.'
+                    ]}
                     />
                 </div>
                 <div className='mscInfoContent'>

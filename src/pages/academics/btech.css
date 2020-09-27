@@ -5,6 +5,11 @@
       grid-template-columns: 98%;
       justify-content: space-between;
     }  
+
+    .MnCPic{
+      width: 95%;
+      align-self: center;
+    }
 }
   
 @media screen and (min-width: 801px){
@@ -15,4 +20,9 @@
       grid-template-columns: 32% 32% 32%;
       justify-content: space-between;
     }
+
+  .MnCPic{
+    align-self: center;
+    max-width: 95%;
+  }
 }

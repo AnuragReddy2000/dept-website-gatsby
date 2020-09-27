@@ -23,7 +23,7 @@ class Carousel extends React.Component<CarouselProps,CarouselState>{
         this.state = {
             currentPic: 0
         }
-        this.timeout = 5000;
+        this.timeout = 10000;
         this.id = setInterval(this.nextPic, this.timeout);
     }
 

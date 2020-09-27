@@ -6,6 +6,7 @@ import Announcements from '../announcements/announcements';
 import {Swipeable} from 'react-swipeable';
 import Marquee from '../marquee/marquee';
 import {BsCaretLeftFill} from 'react-icons/bs';
+import {Helmet} from 'react-helmet';
 
 interface LayoutProps {}
 
@@ -67,6 +68,10 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
   render(){
     return (
       <Swipeable onSwipedRight={this.swipeShowSlider} onSwipedLeft={this.swipeRemoveSlider}>
+        <Helmet>
+          <html lang="en"/>
+          <meta name="description" content="The Department of Mathematics was one of the six departments that was founded along with the Institute in 2008. Since its inception, the department has made a conscious effort to grow in sync with the directions of the Institute and an awareness of the larger needs of the society."/>
+        </Helmet>
         <div className='page' ref={this.pageRef}>
           <TitleBar toggleShowSlider={this.toggleShowSlider}></TitleBar>
           <div className='pageBody'>

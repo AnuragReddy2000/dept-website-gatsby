@@ -2,12 +2,16 @@ import React from 'react';
 import InfoView from '../../components/infoview/infoview';
 import Carousel from '../../components/carousel/carousel';
 import {CarouselPics} from '../../models/CarouselPics';
+import {Helmet} from 'react-helmet';
 
 class OutReachEventsPage extends React.Component{
 
     render(){
         return(
             <div style={{width: '100%'}}>
+                <Helmet>
+                    <title>Dmath - Outreach</title>
+                </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh'}}>
                     <Carousel images={CarouselPics['Outreach']} imagesNum={CarouselPics['Outreach'].length}/>
                 </div>

@@ -5,12 +5,16 @@ import ProfileView from '../../components/profileview/profileview';
 import Carousel from '../../components/carousel/carousel';
 import {BsDot} from 'react-icons/bs';
 import './alumni.css';
+import {Helmet} from 'react-helmet';
 
 class AlumniPage extends React.Component{
 
     render(){
         return(
             <div style={{width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                <Helmet>
+                    <title>Dmath - Alumni</title>
+                </Helmet>
                 <div style={{width: '100%', boxSizing: 'border-box', margin: '3px', padding: '5px'}}>
                     <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>PhD Alumni:</p>
                 </div>

@@ -8,6 +8,7 @@ interface InfoViewProps{
     titleColor?: string;
     link?: string;
     linkText?: string;
+    rightFooter?: string;
 }
 
 class InfoView extends React.Component<InfoViewProps>{
@@ -25,6 +26,7 @@ class InfoView extends React.Component<InfoViewProps>{
                 </div>
                 {this.props.info.map((element, index) => <p key={index} className='content'>{element}</p>)}
                 <p style={{alignSelf: 'flex-start', marginTop:'auto'}}><a href={this.props.link} target='_blank'>{this.props.linkText}</a></p>
+                <p style={{alignSelf:'flex-end'}}>{this.props.rightFooter}</p>
             </div>
         )
     }

@@ -77,6 +77,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  title: `Department Of Mathematics, IIT Hyderabad`
 }
 
 SEO.propTypes = {

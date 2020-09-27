@@ -30,6 +30,11 @@
         padding-left: 4px;
         padding-right: 4px;
     }
+
+    .infoView{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 @media screen and (min-width: 451px) and (max-width: 801px){

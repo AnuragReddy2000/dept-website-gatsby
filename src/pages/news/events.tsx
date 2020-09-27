@@ -1,5 +1,6 @@
 import React from 'react';
 import './events.css';
+import {Helmet} from 'react-helmet';
 
 interface EventsPageState{
     searchDate: Date;
@@ -18,6 +19,9 @@ class EventsPage extends React.Component<EventsPageProps,EventsPageState>{
     render(){
         return(
             <div  className='EventsPageBody'>
+                <Helmet>
+                    <title>Dmath - Events</title>
+                </Helmet>
                 <div className='EventsPageHeader'>
                     <p style={{margin: '0px', padding: '0px'}}>Events:</p>
                 </div>

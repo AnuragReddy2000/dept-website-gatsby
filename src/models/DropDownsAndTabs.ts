@@ -15,7 +15,7 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
         icon: GiBookshelf,
         subTitles: [
             {
-                tab: 'B.tech MnC', 
+                tab: 'B.Tech MnC', 
                 url: '/academics/btech', 
                 pageType: 'component'
             },
@@ -168,11 +168,6 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
             {
                 tab: 'Internships and Placements',
                 url: '/achievements/placements',
-                pageType: 'component'
-            },
-            {
-                tab: 'Awardees',
-                url: '/achievements/awardees',
                 pageType: 'component'
             },
         ]

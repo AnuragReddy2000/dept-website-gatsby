@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Department of Mathematics, IIT Hyderabad`,
+    description: `The Department of Mathematics was one of the six departments that was founded along with the Institute in 2008`,
+    author: `Anurag`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -31,7 +31,49 @@ module.exports = {
         background_color: `#fafafa`,
         theme_color: `#fafafa`,
         display: `standalone`,
-        icon: `src/images/dmath_logo_circle.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        icons: [
+          {
+            "src": "favicons/icon-48x48.png",
+            "sizes": "48x48",
+            "type": "image/png"
+          },
+          {
+            "src": "favicons/icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+          },
+          {
+            "src": "favicons/icon-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+          },
+          {
+            "src": "favicons/icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+          },
+          {
+            "src": "favicons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": "favicons/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+          },
+          {
+            "src": "favicons/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+          },
+          {
+            "src": "favicons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+        ]        
       },
     },
     `gatsby-plugin-offline`,

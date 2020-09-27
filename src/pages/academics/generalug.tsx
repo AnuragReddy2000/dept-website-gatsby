@@ -4,12 +4,16 @@ import InfoView from '../../components/infoview/infoview';
 import {CarouselPics} from '../../models/CarouselPics';
 import TableView from '../../components/tableview/tableview';
 import {GeneralUGCourses} from '../../models/GeneralUGCourses';
+import {Helmet} from 'react-helmet';
 
 class GeneralUGPage extends React.Component{
 
     render(){
         return(
             <div>
+                <Helmet>
+                    <title>Dmath - UG</title>
+                </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh'}}>
                     <Carousel images={CarouselPics['General UG']} imagesNum={CarouselPics['General UG'].length}/>
                     <InfoView 

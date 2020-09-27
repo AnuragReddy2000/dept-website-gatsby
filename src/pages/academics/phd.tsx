@@ -3,12 +3,16 @@ import Carousel from '../../components/carousel/carousel';
 import InfoView from '../../components/infoview/infoview';
 import {CarouselPics} from '../../models/CarouselPics';
 import './phd.css';
+import {Helmet} from 'react-helmet';
 
 class PhDPage extends React.Component{
 
     render(){
         return(
             <div>
+                <Helmet>
+                    <title>Dmath - PhD</title>
+                </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh', whiteSpace: 'pre-line'}}>
                     <Carousel images={CarouselPics['PhD']} imagesNum={CarouselPics['PhD'].length}/>
                     <InfoView 

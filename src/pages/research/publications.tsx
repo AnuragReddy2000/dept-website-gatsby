@@ -3,6 +3,7 @@ import {PublicationsList} from '../../models/PublicationsList';
 import './publications.css';
 import {BsDot} from 'react-icons/bs';
 import {AiFillCaretDown} from 'react-icons/ai';
+import {Helmet} from 'react-helmet';
 
 interface PublicationsPageState{
     currentYear: string;
@@ -39,6 +40,9 @@ class PublicationsPage extends React.Component<PublicationsPageProps,Publication
 
         return(
             <div className='publicationsPage'>
+                <Helmet>
+                    <title>Dmath - Publications</title>
+                </Helmet>
                 <div className='publicationsPageHeader'>
                     <p style={{fontSize:'x-large', marginTop:'1px', marginBottom:'1px', color:'darkblue'}}>Publications:</p>
                     <div className='publicationsYearDropDown' onClick={this.toggleDropDown}>

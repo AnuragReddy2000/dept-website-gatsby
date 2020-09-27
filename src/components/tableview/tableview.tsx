@@ -42,7 +42,7 @@ class TableView extends React.Component<TableViewProps,TableViewState>{
                     <div className='tableViewContent' onClick={this.toggleContentView}>
                         <div className='tableViewContentTitle'>
                             <p style={{width:'95%'}}>{this.props.title}</p>
-                            {this.state.expand ? <RiArrowDropUpLine size={24}/> : <RiArrowDropDownLine size={24}/>}
+                            {this.props.content ? (this.state.expand ? <RiArrowDropUpLine size={24}/> : <RiArrowDropDownLine size={24}/>):null}
                         </div>
                         {(this.state.expand && (this.props.content || this.props.link)) ? <div className='tableViewShowContent'> <p >{this.props.content}</p> <p><a href={this.props.link} target='_blank'>{this.props.linkText}</a></p> </div> : null}
                     </div>

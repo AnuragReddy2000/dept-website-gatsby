@@ -2,12 +2,16 @@ import React from 'react';
 import {FormerPostDoctoralList, PostDoctoralList} from '../../models/PostDoctoralList';
 import ProfileView from '../../components/profileview/profileview';
 import './postdoctoral.css';
+import {Helmet} from 'react-helmet';
 
 class PostDoctoralPage extends React.Component{
 
     render(){
         return(
             <div style={{width: '100%', display: 'flex', flexDirection: 'column'}}>
+                <Helmet>
+                    <title>Dmath - Post Doc</title>
+                </Helmet>
                 <div style={{width: '100%', boxSizing: 'border-box', margin: '3px', padding: '5px'}}>
                     <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>Post Doctoral Fellows:</p>
                 </div>

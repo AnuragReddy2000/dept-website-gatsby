@@ -26,11 +26,11 @@ class TitleBar extends React.Component<TitleBarProps, TitleBarState>{
             <div className='titleBar'>
                 <div className='deptTitle'>
                     <MdMenu className='menuIcon' onClick={this.props.toggleShowSlider} size={32}/>
-                    <img className='titleImageLarge' src= {deptTitleLarge} height='90%'></img> 
-                    <img  className='titleImageSmall' src= {deptTitleSmall} width='90%' height='100%'></img>
+                    <a href='/'><img className='titleImageLarge' src= {deptTitleLarge} height='90%'></img></a> 
+                    <a href='/'><img  className='titleImageSmall' src= {deptTitleSmall} width='90%' height='100%'></img></a>
                 </div>
                 <div className='iithImage'>
-                    <img src={iithlogo} height='70%'></img>
+                    <a href='https://iith.ac.in/' target='_blank'><img src={iithlogo} height='70%'></img></a>
                 </div>
             </div>
         )
