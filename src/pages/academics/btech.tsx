@@ -2,6 +2,7 @@ import React from 'react';
 import InfoView from '../../components/infoview/infoview';
 import './btech.css'
 import ubd_quote from '../../images/academics/btechMnC/ubd_quote.png';
+import ranks from '../../images/academics/btechMnC/ranks.jpg';
 import {Helmet} from 'react-helmet';
 
 class BtechMnCPage extends React.Component{
@@ -19,8 +20,7 @@ class BtechMnCPage extends React.Component{
                     <InfoView 
                     title='B.Tech (Mathematics and Computing): ' 
                     titleColor='darkblue'
-                    info={['The B.Tech Mathematics and Computing program started in the academic year 2017-2018 by our founder director, Professor U. B. Desai, with the first batch of 10 students. For the academic year 2020, the number of seats has been increased to 20.', 
-                    'The objective of this programme is to equip the students with the mathematical foundations required to excel in various applied and computational streams where Math plays a major role.']}
+                    info={['The B.Tech Mathematics and Computing program started in the academic year 2017-2018 by our founder director, Professor U. B. Desai, with the first batch of 10 students. For the academic year 2020, the number of seats has been increased to 20.']}
                     />
                 </div>
                 <InfoView 
@@ -32,12 +32,13 @@ class BtechMnCPage extends React.Component{
                 "Upon successfully completing the Mathematics and computing program, students will be able to pursue the dream of becoming industry professionals. This program also provides an opportunity for higher education in mathematics, computer science, artificial intelligence, etc., in world-class universities.",
                 ]}
                 />
+                <div style={{display:'flex',flexDirection:'column',padding:'10px',backgroundColor:'rgb(250,250,250)'}}>
+                    <img src={ranks} width='100%'></img>
+                </div>
                 <div className='bmpInfoContent'>
                     <InfoView 
                     title='Brochure:' 
-                    info={['Wondering what is B.Tech (M&C) or why do B.Tech (M&C) at IIT Hyderabad? Click on the icon above or the link below to know all the details about the programme at a glance.']}
-                    link = ''
-                    linkText = 'Link to the Brochure'
+                    info={['Wondering what is B.Tech (M&C) or why do B.Tech (M&C) at IIT Hyderabad? Click on the icon above or the link below to know all the details about the programme at a glance.','To be updated...']}
                     />
                     <InfoView 
                     title='Curriculum:' 

@@ -1,7 +1,9 @@
 import muduli from '../images/people/postDoctoral/muduli.jpg'
 import praveen from '../images/people/postDoctoral/praveen.png';
 
-export const PostDoctoralList: Array<{name: string, image: string,email:string, area: string, mentor: string, stay: string, link: string}> = [
+export const PostDoctoralList: Array<{name: string, image: string,email:string, area: string, mentor: string, stay: string, link: string}> = []
+
+export const FormerPostDoctoralList: Array<{name: string, image: string,email:string, area: string, mentor: string, stay: string, link: string}> = [
     {
         name: 'Dr. Priya Ranjan Muduli',
         image: muduli,
@@ -10,10 +12,7 @@ export const PostDoctoralList: Array<{name: string, image: string,email:string, 
         mentor: 'Prof. C.S. Sastry',
         stay: 'Nov 2019 to - ',
         link: 'https://sites.google.com/view/priyaranjanmuduli/home'
-    }
-]
-
-export const FormerPostDoctoralList: Array<{name: string, image: string,email:string, area: string, mentor: string, stay: string, link: string}> = [
+    },
     {
         name: 'Dr. Praveen Kumar P U',
         image: praveen,

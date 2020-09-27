@@ -15,6 +15,7 @@ import Gautam from '../images/people/alumni/Gautam.jpg';
 import Neeru from '../images/people/alumni/Neeru.jpg';
 import msc18 from '../images/people/btech_msc/msc18.jpg';
 import msc17 from '../images/people/btech_msc/msc17.jpg';
+import msc16 from '../images/people/alumni/msc16.jpg';
 
 export const PhDAlumniList: Array< {name: string, image: string, email: string, currentPos: string, mentor: string, area: string} > = [
     {
@@ -191,7 +192,7 @@ export const MScAlumniList: Array<{batch: string, grpImage: string, students: Ar
     },
     {
         batch: "M.Sc 2016",
-        grpImage: "",
+        grpImage: msc16,
         students: [
             {name: 'Abhiram Banra'},
             {name: 'Adiyta Robin Singh'},

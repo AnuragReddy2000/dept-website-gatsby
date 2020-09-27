@@ -1,7 +1,5 @@
 import React from 'react';
-import Carousel from '../../components/carousel/carousel';
 import InfoView from '../../components/infoview/infoview';
-import {CarouselPics} from '../../models/CarouselPics';
 import './msc.css';
 import {Helmet} from 'react-helmet';
 

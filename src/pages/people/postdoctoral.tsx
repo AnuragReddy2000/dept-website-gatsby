@@ -12,18 +12,20 @@ class PostDoctoralPage extends React.Component{
                 <Helmet>
                     <title>Dmath - Post Doc</title>
                 </Helmet>
-                <div style={{width: '100%', boxSizing: 'border-box', margin: '3px', padding: '5px'}}>
-                    <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>Post Doctoral Fellows:</p>
-                </div>
-                <div className='pdinfoContent'>
-                    {PostDoctoralList.map(value => <ProfileView Name={value.name} email={value.email} Area={value.area} supervisor={'Mentor: ' + value.mentor} Image={value.image} periodOfStay={'Period of Stay: ' + value.stay} link={value.link}/>)}
-                </div>
+                {PostDoctoralList.length === 0 ? null : <div style={{width:'100%'}}>
+                    <div style={{width: '100%', boxSizing: 'border-box', margin: '3px', padding: '5px'}}>
+                        <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>Post Doctoral Fellows:</p>
+                    </div>
+                    <div className='pdinfoContent'>
+                        {PostDoctoralList.map(value => <ProfileView Name={value.name} email={value.email} Area={value.area} supervisor={'Mentor: ' + value.mentor} Image={value.image} periodOfStay={'Period of Stay: ' + value.stay} link={value.link}/>)}
+                    </div>
+                </div>}
                 <hr/>
                 <div style={{width: '100%', boxSizing: 'border-box', margin: '3px', padding: '5px'}}>
                     <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>Former Post Doctoral Fellows:</p>
                 </div>
                 <div className='pdinfoContent'>
-                    {FormerPostDoctoralList.map(value => <ProfileView Name={value.name} email={value.email} Area={value.area} supervisor={value.mentor} Image={value.image} periodOfStay={value.stay} link={value.link}/>)}
+                    {FormerPostDoctoralList.map(value => <ProfileView Name={value.name} email={value.email} Area={value.area} supervisor={value.mentor} Image={value.image} periodOfStay={'Period of Stay: ' + value.stay} link={value.link}/>)}
                 </div>
             </div>
         )

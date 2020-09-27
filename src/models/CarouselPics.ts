@@ -2,7 +2,6 @@ import Dmathfam from '../images/homePage/Dmathfam.jpg';
 import DmathPicnic from '../images/homePage/DmathPicnic.png';
 import ubd_quote from '../images/academics/btechMnC/ubd_quote.png';
 import GeneralUG from '../images/academics/generalUG/GeneralUG.jpg';
-import msc from '../images/academics/msc/msc.png';
 import phd_main from '../images/academics/phd/phd_main.png';
 import phd_submain from '../images/academics/phd/phd_submain.png';
 import event1 from '../images/news/outReach/event1.png';
@@ -15,7 +14,6 @@ export const CarouselPics: Record<string, string[]> ={
     'About Us': [sunrise,Dmathfam,DmathGrp2],
     'BtechMnC': [ubd_quote],
     'General UG': [GeneralUG],
-    'MSc': [msc],
     'PhD': [phd_main,phd_submain],
     'Outreach': [event1,event2,event3]
 }
