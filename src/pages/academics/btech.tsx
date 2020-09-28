@@ -11,7 +11,7 @@ class BtechMnCPage extends React.Component{
         return(
             <div style={{display:'flex', flexDirection:'column', justifyContent:'flex-start', width:'100%', height:'100%'}}>
                 <Helmet>
-                    <title>Dmath - Btech</title>
+                    <title>DMath - Btech</title>
                 </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh', marginBottom:'1vh'}}>
                     <div style={{width:'100%', alignItems:'center', display:'flex', flexDirection:'row', justifyContent:'center', paddingTop:'15px', paddingBottom:'15px'}}>

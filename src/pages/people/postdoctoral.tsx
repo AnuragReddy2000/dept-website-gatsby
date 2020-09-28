@@ -10,7 +10,7 @@ class PostDoctoralPage extends React.Component{
         return(
             <div style={{width: '100%', display: 'flex', flexDirection: 'column'}}>
                 <Helmet>
-                    <title>Dmath - Post Doc</title>
+                    <title>DMath - Post Doc</title>
                 </Helmet>
                 {PostDoctoralList.length === 0 ? null : <div style={{width:'100%'}}>
                     <div style={{width: '100%', boxSizing: 'border-box', margin: '3px', padding: '5px'}}>

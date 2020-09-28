@@ -40,7 +40,7 @@ class SeminarPage extends React.Component<SeminarPageProps,SeminarPageState>{
         return(
             <div className='seminarPage'>
                 <Helmet>
-                    <title>Dmath - Seminars</title>
+                    <title>DMath - Seminars</title>
                 </Helmet>
                 <div className='seminarPageHeader'>
                     <p style={{fontSize:'x-large', marginTop:'1px', marginBottom:'1px', color:'darkblue'}}>Seminars:</p>

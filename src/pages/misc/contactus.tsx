@@ -8,7 +8,7 @@ class ContactUs extends React.Component{
         return (
             <div style={{width: '100%', display: 'flex', flexDirection: 'column', justifyContent:'flex-start'}}>
                 <Helmet>
-                    <title>Dmath - Contact</title>
+                    <title>DMath - Contact</title>
                 </Helmet>
                 <div className='contactUsparagraph'>
                     <p style={{color: 'darkblue', fontSize: 'x-large', margin:'10px', padding: '0px', marginLeft:'0px'}}>Contact Us:</p>

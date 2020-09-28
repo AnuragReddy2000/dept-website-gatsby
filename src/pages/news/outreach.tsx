@@ -10,7 +10,7 @@ class OutReachEventsPage extends React.Component{
         return(
             <div style={{width: '100%'}}>
                 <Helmet>
-                    <title>Dmath - Outreach</title>
+                    <title>DMath - Outreach</title>
                 </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh'}}>
                     <Carousel images={CarouselPics['Outreach']} imagesNum={CarouselPics['Outreach'].length}/>

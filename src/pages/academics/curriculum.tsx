@@ -9,7 +9,7 @@ class CurriculumPage extends React.Component{
         return(
             <div style={{width: '100%', display:'flex',flexDirection:'column',justifyContent:'flex-start'}}>
                 <Helmet>
-                    <title>Dmath - Curriculum</title>
+                    <title>DMath - Curriculum</title>
                 </Helmet>
                 <InfoView title='Curriculum: ' titleColor='darkblue' info={['The flexibility in our academic structure has resulted in various curricula for various batches, each designed to be an improvement over the previous.','All the links to various curricula are given below:']}/>
                 <TableView title={'B.TECH 2020 CURRICULUM'} speaker='Faculty Advisor:  Dr. Neeraj Kumar' link='/pdfs/BTechCurriculum2020.pdf' linkText='Link to the Curriculum'/>

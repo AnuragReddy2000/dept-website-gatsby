@@ -11,7 +11,7 @@ class BtechAndMScPage extends React.Component{
         return(
             <div className='btechAndMScPage'>
                 <Helmet>
-                    <title>Dmath - BTech and MSc</title>
+                    <title>DMath - BTech and MSc</title>
                 </Helmet>
                 <div style={{width: '100%', boxSizing: 'border-box', margin: '3px', padding: '5px'}}>
                     <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>B.Tech and M.Sc students:</p>

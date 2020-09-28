@@ -10,7 +10,7 @@ class StaffPage extends React.Component{
         return (
             <div style={{width: '100%'}}>
                 <Helmet>
-                    <title>Dmath - Staff</title>
+                    <title>DMath - Staff</title>
                 </Helmet>
                 <p className='spTitle'>Administrative Personnel: </p>
                 <div className='spInfoContent'>

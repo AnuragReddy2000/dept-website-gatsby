@@ -8,7 +8,7 @@ class Minors extends React.Component{
         return(
             <div>
                 <Helmet>
-                    <title>Dmath - Majors and Minors</title>
+                    <title>DMath - Majors and Minors</title>
                 </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh'}}>
                     <InfoView 

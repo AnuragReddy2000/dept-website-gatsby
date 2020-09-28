@@ -41,7 +41,7 @@ class PublicationsPage extends React.Component<PublicationsPageProps,Publication
         return(
             <div className='publicationsPage'>
                 <Helmet>
-                    <title>Dmath - Publications</title>
+                    <title>DMath - Publications</title>
                 </Helmet>
                 <div className='publicationsPageHeader'>
                     <p style={{fontSize:'x-large', marginTop:'1px', marginBottom:'1px', color:'darkblue'}}>Publications:</p>

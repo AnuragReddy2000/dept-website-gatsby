@@ -13,7 +13,7 @@ class AlumniPage extends React.Component{
         return(
             <div style={{width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                 <Helmet>
-                    <title>Dmath - Alumni</title>
+                    <title>DMath - Alumni</title>
                 </Helmet>
                 <div style={{width: '100%', boxSizing: 'border-box', margin: '3px', padding: '5px'}}>
                     <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>PhD Alumni:</p>

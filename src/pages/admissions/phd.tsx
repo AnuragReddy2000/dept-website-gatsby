@@ -9,7 +9,7 @@ class PhDAdmissions extends React.Component{
         return(
             <div style={{display: 'flex', flexDirection: 'column'}}>
                 <Helmet>
-                    <title>Dmath - PhD Admissions</title>
+                    <title>DMath - PhD Admissions</title>
                 </Helmet>
                 <InfoView title='Ph.D. Admissions:' titleColor='darkblue' info={['The shortlisted applicants are requested to send in a confirmation mail explicitly stating their acceptance or otherwise to the following mail IDs quoting their application numbers before 31st of July: ma_phd@iith.ac.in, office@math.iith.ac.in',
                 'Those candidates who have accepted the offer will be contacted by mail in the first week of August with further instructions.',

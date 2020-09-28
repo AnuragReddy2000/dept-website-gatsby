@@ -10,7 +10,7 @@ class Credits extends React.Component{
         return(
             <div style={{width: '100%', marginTop:'5px'}}>
                 <Helmet>
-                    <title>Dmath - Credits</title>
+                    <title>DMath - Credits</title>
                 </Helmet>
                 <InfoView title='Our thanks go to...' titleColor='darkblue' info={['All the people who have directly and indirectly helped in the making of this website.', 'We welcome any comments / observations / suggestions.']}/>
                 <div className='creditsNames'>

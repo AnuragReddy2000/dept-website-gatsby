@@ -8,7 +8,7 @@ class StudentSeminarPage extends React.Component{
         return(
             <div style={{height:'88vh', width:'100%', display:'flex', flexDirection:'column',justifyContent:'flex-start'}}>
                 <Helmet>
-                    <title>Dmath - Student Seminars</title>
+                    <title>DMath - Student Seminars</title>
                 </Helmet>
                 <div style={{width: '100%', height:'45px', marginBottom:'1vh',backgroundColor:'rgb(250,250,250)',display:'flex', flexDirection:'row',justifyContent:'flex-start', border:'1px solid rgb(170, 170, 170)'}}>
                     <p style={{fontSize:'x-large', color:'darkblue',alignSelf:'center',marginLeft:'10px'}}>Student Seminars:</p>

@@ -8,7 +8,7 @@ class FacultyRecruitment extends React.Component{
         return(
             <div>
                 <Helmet>
-                    <title>Dmath - Project Openings</title>
+                    <title>DMath - Project Openings</title>
                 </Helmet>
                 <InfoView title='Project Openings:' titleColor='darkblue' info={['Interested candidates can write to the project PI for more details. Please see the following page for possible openings:',]}
                     link='/research/fundedprojects' linkText='Details of Funded Projects'

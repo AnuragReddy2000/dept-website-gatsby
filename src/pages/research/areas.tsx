@@ -9,7 +9,7 @@ class AreaPage extends React.Component{
         return(
             <div style={{width: '100%'}}>
                 <Helmet>
-                    <title>Dmath - Areas of Research</title>
+                    <title>DMath - Areas of Research</title>
                 </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh'}}>
                     <InfoView 

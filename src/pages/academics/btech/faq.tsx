@@ -8,7 +8,7 @@ class Faq extends React.Component{
         return(
             <div>
                 <Helmet>
-                    <title>Dmath-Btech-FAQ</title>
+                    <title>DMath-Btech-FAQ</title>
                 </Helmet>
                 <p style={{fontSize:'x-large'}}>Some frequently asked questions...</p>
                 <TableView title={"Is B.Tech (M&C) the same as B.Tech (CSE) at IITH?"} content={"Well, the answer is a clear NO. While computing does require knowledge of the fundamentals of CS, the focus of this programme is on doing the Math required in different Computational Engineering streams. \n However, note that the mandatory CS courses account for almost one-fifth of the curriculum. Further, there can be additional overlap in the form of electives."}/>

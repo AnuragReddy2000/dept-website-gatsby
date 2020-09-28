@@ -11,7 +11,7 @@ class FacultyPage extends React.Component{
         return(
             <div>
                 <Helmet>
-                    <title>Dmath - Faculty</title>
+                    <title>DMath - Faculty</title>
                 </Helmet>
                 <InfoView title='Faculty:' titleColor='darkblue' info={['Our Department currently has 16 faculty members with interests ranging from pure, applied, and computational mathematics. ']}/>
                 <div className='infoContent'>

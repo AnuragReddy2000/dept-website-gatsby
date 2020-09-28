@@ -10,7 +10,7 @@ class FundedProjectsPage extends React.Component{
         return(
             <div style={{width: '100%'}}>
                 <Helmet>
-                    <title>Dmath - Funded Projects</title>
+                    <title>DMath - Funded Projects</title>
                 </Helmet>
                 <div className='FundedProjectsHeader'>
                     <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>Funded Projects:</p>

@@ -22,7 +22,7 @@ class Announcements extends React.Component<AnnouncementsProps>{
                 <div className='events'>
                     <div style={{display: 'flex', flexDirection: 'row', justifyContent:'space-between',alignItems:'center', width:'90%'}}> <p className='announceTitle'> Upcoming Events:</p> </div>
                     <div style={{height: "90%"}}>
-                        <iframe src="https://calendar.google.com/calendar/embed?height=300&amp;wkst=2&amp;bgcolor=%23fafafa&amp;ctz=Asia%2FKolkata&amp;src=bGV1N2d0bGhpYmx1MHRzYmkxNW5kdW5kYjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4uaW5kaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23D81B60&amp;color=%230B8043&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;showDate=0&amp;showNav=0&amp;mode=AGENDA" style={{borderWidth:"0", width:"100%", height:"100%",}}></iframe>
+                        <iframe src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23fafafa&amp;ctz=Asia%2FKolkata&amp;src=Y185MjJxc3M2dm5lbG1jbjgwbmpwYWVycDZwY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23F4511E&amp;showPrint=0&amp;showCalendars=0&amp;showNav=0&amp;showDate=0&amp;showTabs=0&amp;showTz=0&amp;mode=AGENDA" style={{borderWidth:"0", width:"100%", height:"100%",}}></iframe>
                     </div>
                 </div>    
             </div>

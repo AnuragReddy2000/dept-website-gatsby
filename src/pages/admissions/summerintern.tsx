@@ -8,7 +8,7 @@ class SummerInternships extends React.Component{
         return(
             <div style={{width: '100%'}}>
                 <Helmet>
-                    <title>Dmath - Summer Intern</title>
+                    <title>DMath - Summer Intern</title>
                 </Helmet>
                 <InfoView title='Summer Internships:' titleColor='darkblue' info={['Interested candidates may contact the faculty members individually.']}/>
             </div>

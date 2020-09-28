@@ -12,7 +12,7 @@ class GeneralUGPage extends React.Component{
         return(
             <div>
                 <Helmet>
-                    <title>Dmath - UG</title>
+                    <title>DMath - UG</title>
                 </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh'}}>
                     <Carousel images={CarouselPics['General UG']} imagesNum={CarouselPics['General UG'].length}/>

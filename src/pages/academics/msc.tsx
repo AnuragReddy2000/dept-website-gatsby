@@ -9,7 +9,7 @@ class MScPage extends React.Component{
         return(
             <div>
                 <Helmet>
-                    <title>Dmath - MSc</title>
+                    <title>DMath - MSc</title>
                 </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh', whiteSpace: 'pre-line'}}>
                     <InfoView 

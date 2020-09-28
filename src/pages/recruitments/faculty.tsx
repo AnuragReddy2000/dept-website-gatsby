@@ -9,7 +9,7 @@ class FacultyRecruitment extends React.Component{
         return(
             <div>
                 <Helmet>
-                    <title>Dmath - Faculty Recruitments</title>
+                    <title>DMath - Faculty Recruitments</title>
                 </Helmet>
                 <InfoView title='Faculty Recruitment:' titleColor='darkblue' info={['The Department of Mathematics at IIT Hyderabad invites applications from those with a consistently good research track record and with expertise in complementary areas to that currently available in the department.',
                     'Last date for receiving applications for the current recruitment is 31-05-2020. Applications received after this deadline will be considered for the next recruitment.']}
