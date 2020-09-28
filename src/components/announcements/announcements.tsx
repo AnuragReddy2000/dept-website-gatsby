@@ -8,23 +8,46 @@ interface AnnouncementsProps{
     hideAnnouncements: () => void;
 }
 
-class Announcements extends React.Component<AnnouncementsProps>{
+interface AnnouncementsState{
+    announcements: string[];
+    events: string[];
+}
+
+class Announcements extends React.Component<AnnouncementsProps,AnnouncementsState>{
+    
+    constructor(props: AnnouncementsProps,state: AnnouncementsState){
+        super(props,state);
+        this.state={
+            announcements:[],
+            events:[]
+        }
+    }
+
+    async componentDidMount(){
+        const response = await fetch("/data/announcements.json");
+        const body = await response.json();
+        this.setState({
+            announcements: body.announcements,
+            events: body.events
+        }) 
+
+    }
 
     render(){
         return(
             <div className='announcementColumn'>
-                <AiOutlineCloseSquare onClick={this.props.hideAnnouncements} size={20} color='darkred' className='closeIcon'/>
                 <div className='announcements'>
-                    <div style={{display: 'flex', flexDirection: 'row', justifyContent:'space-between',alignItems:'center'}}> <p className='announceTitle'> Announcements:</p> </div>
-                    <p className='announceList' > <BsDot/> Admission Process - Ph.D Interview results by July, 2020</p>
-                    <p className='announceList' > <BsDot/> Faculty Recruitment - Last date to apply: 31 May 2020</p>
+                    <div style={{display: 'flex', flexDirection: 'row', justifyContent:'space-between',alignItems:'center', width:'100%',paddingLeft:'3px'}}> 
+                        <p className='announceTitle'> Announcements:</p> 
+                        <AiOutlineCloseSquare onClick={this.props.hideAnnouncements} size={20} color='darkred' className='closeIcon'/>
+                    </div>
+                    {this.state.announcements.map(element => <p className='announceList' > <BsDot/> {element}</p>)}
                 </div>
                 <div className='events'>
-                    <div style={{display: 'flex', flexDirection: 'row', justifyContent:'space-between',alignItems:'center', width:'90%'}}> <p className='announceTitle'> Upcoming Events:</p> </div>
-                    <div style={{height: "90%"}}>
-                        <iframe src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23fafafa&amp;ctz=Asia%2FKolkata&amp;src=Y185MjJxc3M2dm5lbG1jbjgwbmpwYWVycDZwY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23F4511E&amp;showPrint=0&amp;showCalendars=0&amp;showNav=0&amp;showDate=0&amp;showTabs=0&amp;showTz=0&amp;mode=AGENDA" style={{borderWidth:"0", width:"100%", height:"100%",}}></iframe>
-                    </div>
+                    <p className='announceTitle'> Upcoming Events:</p>
+                    {this.state.events.map(element => <p className='announceList' > <BsDot/> {element}</p>)}
                 </div>    
+                <a href='/news/events' className='footerText'><p><i>visit here for more info</i></p></a>
             </div>
         )
     }

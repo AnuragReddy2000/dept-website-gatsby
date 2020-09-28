@@ -21,16 +21,7 @@
     height: 100%;
 }
 
-@media screen and (max-width: 800px){
-    .EventsPageCalendarRow{
-        height: 72vh;
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 801px){
-    .EventsPageCalendarRow{
-        width: 100%;
-        height: 100vh;
-    }
+.EventsPageCalendarRow{
+    width: 100%;
+    height: 72vh;
 }

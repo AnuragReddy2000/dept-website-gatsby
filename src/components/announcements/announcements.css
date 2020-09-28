@@ -3,6 +3,7 @@
     .announcementColumn{
       display: flex;
       flex-direction: column;
+      justify-content: flex-start;
       align-items: center;
       width: 20vw;
       border-right: 1px solid rgb(236, 236, 236);
@@ -10,10 +11,14 @@
       background-color: rgb(250, 250, 250);
       margin-right: 2px;
       padding: 5px;
+      height: 90vh;
+      position: sticky;
+      position: -webkit-sticky;
+      top:10vh;
     }
     
     .announcements{
-      height: 38vh;
+      height: 42vh;
       width: 100%;
       background-color: rgb(250, 250, 250);
       margin-top: 1vh;
@@ -26,7 +31,7 @@
       box-sizing: border-box;
       position: sticky;
       position: -webkit-sticky;
-      top: 16.5vh;
+      top: 12vh;
       text-align: left;
       overflow-y: scroll;
       scrollbar-width: none;
@@ -43,6 +48,7 @@
       margin-bottom: 3px;
       margin-left: 3px;
       flex-shrink: 0;
+      text-align: justify;
     }
     
     .announceTitle{
@@ -52,14 +58,13 @@
       align-self: center;
       font-size: large;
       border-bottom: 1px solid rgb(197, 197, 197);
-      width: 98%;
+      margin-left: 3px;
     }
   
     .events{
-      height: 44vh;
+      height: 41vh;
       width: 100%;
       background-color: rgb(250, 250, 250);
-      margin-top: 1vh;
       margin-right: 5px;
       margin-left: 5px;
       display: flex;
@@ -69,15 +74,20 @@
       box-sizing: border-box;
       position: sticky;
       position: -webkit-sticky;
-      top: 55vh;
+      top: 54vh;
     }
   
     .closeIcon{
-      align-self: flex-end;
+      align-self: flex-start;
       color: red; 
+      
+    }
+
+    .footerText{
+      text-decoration: inherit;
       position: sticky;
       position: -webkit-sticky;
-      top: 13vh
+      bottom: 1vh;
     }
   }
       

@@ -1,5 +1,4 @@
 import React from 'react';
-import {PublicationsList} from '../../models/PublicationsList';
 import './publications.css';
 import {BsDot} from 'react-icons/bs';
 import {AiFillCaretDown} from 'react-icons/ai';
@@ -8,16 +7,24 @@ import {Helmet} from 'react-helmet';
 interface PublicationsPageState{
     currentYear: string;
     dropDownOpen: boolean;
+    publications: any
 }
 
 interface PublicationsPageProps{}
+
+interface Publication{
+    people: string;
+    name: string;
+    details: string;
+}
 
 class PublicationsPage extends React.Component<PublicationsPageProps,PublicationsPageState>{
     constructor(props: PublicationsPageProps,state: PublicationsPageState){
         super(props,state);
         this.state = {
-            currentYear: '2020',
-            dropDownOpen: false
+            currentYear: "2020",
+            dropDownOpen: false,
+            publications: undefined
         }
     }
 
@@ -34,9 +41,17 @@ class PublicationsPage extends React.Component<PublicationsPageProps,Publication
         })
     }
 
+    async componentDidMount(){
+        const response = await fetch("/data/publications.json");
+        const body = await response.json();
+        this.setState({
+            publications: body
+        })
+    }
+
 
     render(){
-        const publications = PublicationsList[this.state.currentYear]
+        const publications = (this.state.publications===undefined) ? []:this.state.publications[this.state.currentYear] as Publication[];
 
         return(
             <div className='publicationsPage'>
@@ -51,10 +66,10 @@ class PublicationsPage extends React.Component<PublicationsPageProps,Publication
                 </div>
                 {this.state.dropDownOpen ? <div className='publicationsYearDropDownListBox'>
                     <div className='publicationsYearDropDownList'>
-                        <p onClick={() => this.changeYear('2020')} className='publicationsYearListItem'>2020</p>
-                        <p onClick={() => this.changeYear('2019')} className='publicationsYearListItem'>2019</p>
-                        <p onClick={() => this.changeYear('2018')} className='publicationsYearListItem'>2018</p>
-                        <p onClick={() => this.changeYear('2017')} className='publicationsYearListItem'>2017</p>
+                        <p onClick={() => this.changeYear("2020")} className='publicationsYearListItem'>2020</p>
+                        <p onClick={() => this.changeYear("2019")} className='publicationsYearListItem'>2019</p>
+                        <p onClick={() => this.changeYear("2018")} className='publicationsYearListItem'>2018</p>
+                        <p onClick={() => this.changeYear("2017")} className='publicationsYearListItem'>2017</p>
                     </div>
                 </div> : null}
                 <div className='publicationsColumn'>

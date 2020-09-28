@@ -1,11 +1,38 @@
 import React from 'react';
-import {FundedProjectsList} from '../../models/FundedProjectsList';
 import TableView from '../../components/tableview/tableview';
 import './fundedprojects.css';
 import {Helmet} from 'react-helmet';
 
-class FundedProjectsPage extends React.Component{
-    
+interface FundedProject{
+    title:string;
+    prof:string;
+    agency:string;
+    duration:string;
+    openings:string
+}
+
+interface FundedProjectsState{
+    projects: FundedProject[];
+}
+
+interface FundedProjectsProps{}
+
+class FundedProjectsPage extends React.Component<FundedProjectsProps,FundedProjectsState>{
+    constructor(props:FundedProjectsProps,state:FundedProjectsState){
+        super(props,state);
+        this.state={
+            projects:[]
+        }
+    }
+
+    async componentDidMount(){
+        const response = await fetch("/data/fundedprojects.json");
+        const body = await response.json();
+        this.setState({
+            projects: body as FundedProject[]
+        })
+    }
+
     render(){
         return(
             <div style={{width: '100%'}}>
@@ -15,7 +42,7 @@ class FundedProjectsPage extends React.Component{
                 <div className='FundedProjectsHeader'>
                     <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>Funded Projects:</p>
                 </div>
-                {FundedProjectsList.map(value => <div><TableView title={value.title} speaker={value.prof} dateVenue={(value.openings==='Yes') ? "Open": "Openings Closed"} content={'Grant Agency: ' + value.agency + '\n' + 'Time Period: ' + value.duration} overrideDateVenueWidth='40%'/></div>)}
+                {this.state.projects.map(value => <div><TableView title={value.title} speaker={value.prof} dateVenue={(value.openings==='Yes') ? "Open": "Openings Closed"} content={'Grant Agency: ' + value.agency + '\n' + 'Time Period: ' + value.duration} overrideDateVenueWidth='40%'/></div>)}
             </div>
         )
     }
