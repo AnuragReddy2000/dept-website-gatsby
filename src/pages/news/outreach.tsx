@@ -1,10 +1,31 @@
 import React from 'react';
 import InfoView from '../../components/infoview/infoview';
 import Carousel from '../../components/carousel/carousel';
-import {CarouselPics} from '../../models/CarouselPics';
 import {Helmet} from 'react-helmet';
 
-class OutReachEventsPage extends React.Component{
+interface OutReachState{
+    carouselPics:string[];
+}
+
+interface OutReachProps{}
+
+class OutReachEventsPage extends React.Component<OutReachProps,OutReachState>{
+
+    constructor(props: OutReachProps,state: OutReachState){
+        super(props,state);
+        this.state={
+            carouselPics:[]
+        }
+    }
+
+    async componentDidMount(){
+        const picResponse = await fetch("/data/carousel.json");
+        const picBody = await picResponse.json();
+        this.setState({
+            carouselPics: picBody["Outreach"],
+        }) 
+    }
+
 
     render(){
         return(
@@ -13,7 +34,7 @@ class OutReachEventsPage extends React.Component{
                     <title>DMath - Outreach</title>
                 </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh'}}>
-                    <Carousel images={CarouselPics['Outreach']} imagesNum={CarouselPics['Outreach'].length}/>
+                    <Carousel images={this.state.carouselPics} imagesNum={this.state.carouselPics.length}/>
                 </div>
                 <InfoView 
                     title='One-week Summer Camp for School Students:' 

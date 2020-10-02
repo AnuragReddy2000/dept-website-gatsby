@@ -18,20 +18,20 @@ interface NavTabState{}
 class NavTab extends React.Component<NavTabProp,NavTabState>{
 
     onClick=():void =>{
-        this.props.onClickEvent(this.props.name);
+        this.props.onClickEvent((this.props.urlLink==undefined ? this.props.name : this.props.urlLink));
     }
 
     render(){
         const Icon = this.props.icon as React.ElementType;
         return(
             this.props.pageType === 'static' ? <a href={this.props.urlLink} style={{textDecoration: 'none', color: 'inherit'}} target="_blank">
-                <div className={((this.props.currentTab===this.props.name) ? 'active':'inactive') + 'NavTab'} onClick={this.onClick}>
+                <div className={((this.props.currentTab===this.props.urlLink) ? 'active':'inactive') + 'NavTab'} onClick={this.onClick}>
                     {(this.props.icon === undefined) ? <BsDot/> : <Icon/>}
                     <p className='navTabName'>{this.props.name}</p>
                 </div>
             </a>
             : <Link to={this.props.urlLink ? this.props.urlLink : '/'} className={this.props.urlLink ? 'active-link' : 'disabled-link'} style={{textDecoration: 'none', color: 'inherit'}}>
-                <div className={((this.props.currentTab===this.props.name) ? 'active':'inactive') + 'NavTab'} onClick={this.onClick}>
+                <div className={((this.props.currentTab===this.props.urlLink) ? 'active':'inactive') + 'NavTab'} onClick={this.onClick}>
                     {(this.props.icon === undefined) ? <BsDot/> : <Icon/>}
                     <p className='navTabName'>{this.props.name}</p>
                 </div>

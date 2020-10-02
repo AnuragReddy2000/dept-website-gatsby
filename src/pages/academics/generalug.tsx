@@ -1,12 +1,44 @@
 import React from 'react';
 import Carousel from '../../components/carousel/carousel';
 import InfoView from '../../components/infoview/infoview';
-import {CarouselPics} from '../../models/CarouselPics';
 import TableView from '../../components/tableview/tableview';
-import {GeneralUGCourses} from '../../models/GeneralUGCourses';
 import {Helmet} from 'react-helmet';
 
-class GeneralUGPage extends React.Component{
+interface GeneralUGPageState{
+    data: CourseData[];
+    carouselPics:string[];
+}
+
+interface GeneralUGPageProps{}
+
+interface CourseData{
+    CourseCode: string;
+    CourseName: string;
+    Syllabus: string;
+}
+
+class GeneralUGPage extends React.Component<GeneralUGPageProps, GeneralUGPageState>{
+
+    constructor(props: GeneralUGPageProps, state: GeneralUGPageState){
+        super(props, state);
+        this.state={
+            data:[],
+            carouselPics:[]
+        }
+    }
+
+    async componentDidMount(){
+        const picResponse = await fetch("/data/carousel.json");
+        const picBody = await picResponse.json();
+        this.setState({
+            carouselPics: picBody["General UG"],
+        }) 
+        const response = await fetch("/data/generalugcourses.json");
+        const body = await response.json();
+        this.setState({
+            data: body,
+        })
+    }
 
     render(){
         return(
@@ -15,7 +47,7 @@ class GeneralUGPage extends React.Component{
                     <title>DMath - UG</title>
                 </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh'}}>
-                    <Carousel images={CarouselPics['General UG']} imagesNum={CarouselPics['General UG'].length}/>
+                    <Carousel images={this.state.carouselPics} imagesNum={this.state.carouselPics.length}/>
                     <InfoView 
                     title='Institute-wide Undergrad Courses: ' 
                     titleColor='darkblue'
@@ -23,7 +55,7 @@ class GeneralUGPage extends React.Component{
                     'The following is the list of common courses offered:']}
                     />
                 </div>
-                {GeneralUGCourses.map(value => <TableView title={value['CourseName']} content={value['Syllabus']} sno={value['CourseCode']} overrideSnoWidth='30%'/>)}
+                {this.state.data.map(value => <TableView title={value.CourseName} content={value.Syllabus} sno={value.CourseCode} overrideSnoWidth='30%'/>)}
             </div>
         )
     }

@@ -1,9 +1,12 @@
 {
     "announcements": [
         "The spot admissions for the current round of admissions into M.Sc (Maths) is complete and there are no more seats available for offer.",
-        "Admissions process - Ph.D. interviews result July, 2020"
+        "Admissions process - Ph.D. interviews result July, 2020"        
     ],
     "events": [
-        "Advanced Functional Analysis and its Applications : 16th - 24th Dec 2020"
+        {
+            "name":"Advanced Functional Analysis and its Applications : 16th - 24th Dec 2020",
+            "link":"https://sites.google.com/iith.ac.in/decemberworkshop/"
+        }
     ]
 }

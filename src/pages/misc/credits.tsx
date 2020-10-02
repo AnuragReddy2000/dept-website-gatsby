@@ -16,7 +16,7 @@ class Credits extends React.Component{
                 <div className='creditsNames'>
                     <p style={{color: 'darkblue', fontSize: 'x-large', margin:'10px', padding: '0px'}}>Website: Design and Development</p>
                     <p style={{margin: '8px', padding: '0px'}}><BsDot/> Mr. Anurag Reddy Karri</p>
-                    <p style={{margin: '8px', padding: '0px'}}><BsDot/> Ms. Srujana B</p>
+                    <p style={{margin: '8px', padding: '0px'}}>  A special mention goes to Ms. Srujana B for her continuous help and valuable suggestions.</p>
                 </div>
                 <div className='creditsNames'>
                     <p style={{color: 'darkblue', fontSize: 'x-large', margin:'10px', padding: '0px'}}>Website: Maintenance</p>

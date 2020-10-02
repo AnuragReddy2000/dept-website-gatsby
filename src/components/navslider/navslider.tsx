@@ -30,7 +30,7 @@ class NavSlider extends React.Component<NavSliderProps, NavSliderState>{
     }
 
     home=():void =>{
-        this.props.changeTab('Home');
+        this.props.changeTab('/');
         this.changeDropDownTab('None');
     }
 

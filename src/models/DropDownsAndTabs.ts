@@ -16,32 +16,32 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
         subTitles: [
             {
                 tab: 'B.Tech MnC', 
-                url: '/academics/btech', 
+                url: '/academics/btech/', 
                 pageType: 'component'
             },
             {
                 tab: 'General UG',
-                url: '/academics/generalug', 
+                url: '/academics/generalug/', 
                 pageType: 'component'
             },
             {
                 tab: 'M.Sc',
-                url: '/academics/msc', 
+                url: '/academics/msc/', 
                 pageType: 'component'
             },
             {
                 tab: 'Ph.D',
-                url: '/academics/phd', 
+                url: '/academics/phd/', 
                 pageType: 'component'
             },
             {
                 tab: 'Minors and Double Majors',
-                url: '/academics/minors', 
+                url: '/academics/minors/', 
                 pageType: 'component'
             },
             {
                 tab: 'Curriculum',
-                url: '/academics/curriculum', 
+                url: '/academics/curriculum/', 
                 pageType: 'component'
             }
         ]
@@ -52,17 +52,17 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
         subTitles: [
             { 
                 tab: 'Areas',
-                url: '/research/areas', 
+                url: '/research/areas/', 
                 pageType: 'component'
             },
             {
                 tab: 'Publications',
-                url: '/research/publications', 
+                url: '/research/publications/', 
                 pageType: 'component'
             },
             {
                 tab: 'Funded Projects',
-                url: '/research/fundedprojects', 
+                url: '/research/fundedprojects/', 
                 pageType: 'component'
             }
         ]
@@ -73,32 +73,32 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
         subTitles: [
             {
                 tab: 'Faculty',
-                url: '/people/faculty', 
+                url: '/people/faculty/', 
                 pageType: 'component'
             },
             {
                 tab: 'Staff',
-                url: '/people/staff', 
+                url: '/people/staff/', 
                 pageType: 'component'
             },
             {
                 tab: 'B.Tech & M.Sc',
-                url: '/people/btech_msc', 
+                url: '/people/btech_msc/', 
                 pageType: 'component'
             }, 
             { 
                 tab: 'Doctoral Students',
-                url: '/people/doctoral', 
+                url: '/people/doctoral/', 
                 pageType: 'component'
             },
             { 
                 tab: 'Post-doctoral Fellows',
-                url: '/people/postdoctoral', 
+                url: '/people/postdoctoral/', 
                 pageType: 'component'
             },
             {
                 tab: 'Alumni',
-                url: '/people/alumni', 
+                url: '/people/alumni/', 
                 pageType: 'component'
             },
         ]
@@ -109,22 +109,22 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
         subTitles: [
             {
                 tab: 'Seminars',
-                url: '/news/seminars', 
+                url: '/news/seminars/', 
                 pageType: 'component'
             },
             {
                 tab: 'Student Seminars',
-                url: '/news/studentseminars', 
+                url: '/news/studentseminars/', 
                 pageType: 'component'
             },
             {
                 tab: 'Events',
-                url: '/news/events', 
+                url: '/news/events/', 
                 pageType: 'component'
             },
             {
                 tab: 'Outreach Events',
-                url: '/news/outreach', 
+                url: '/news/outreach/', 
                 pageType: 'component'
             }
         ]
@@ -135,12 +135,12 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
         subTitles: [
             {
                 tab:'Ph.D Admissions',
-                url: '/admissions/phd', 
+                url: '/admissions/phd/', 
                 pageType: 'component'
             },
             {
                 tab: 'Summer Internships',
-                url: '/admissions/summerintern', 
+                url: '/admissions/summerintern/', 
                 pageType: 'component'
             }
         ]
@@ -151,12 +151,12 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
         subTitles: [
             {
                 tab: 'Faculty Recruitments',
-                url: '/recruitments/faculty', 
+                url: '/recruitments/faculty/', 
                 pageType: 'component'
             },
             {
                 tab: 'Project Openings',
-                url: '/recruitments/project_openings', 
+                url: '/recruitments/project_openings/', 
                 pageType: 'component'
             }
         ]
@@ -167,7 +167,7 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
         subTitles: [
             {
                 tab: 'Internships and Placements',
-                url: '/achievements/placements',
+                url: '/achievements/placements/',
                 pageType: 'component'
             },
         ]

@@ -1,11 +1,31 @@
 import React from 'react';
 import Carousel from '../components/carousel/carousel';
 import InfoView from '../components/infoview/infoview';
-import {CarouselPics} from '../models/CarouselPics';
 import './homepage.css';
 import {Helmet} from 'react-helmet';
 
-class Homepage extends React.Component{
+interface HomepageState{
+    carouselPics:string[];
+}
+
+interface HomepageProps{}
+
+class Homepage extends React.Component<HomepageProps,HomepageState>{
+
+    constructor(props: HomepageProps,state: HomepageState){
+        super(props,state);
+        this.state={
+            carouselPics:[]
+        }
+    }
+
+    async componentDidMount(){
+        const picResponse = await fetch("/data/carousel.json");
+        const picBody = await picResponse.json();
+        this.setState({
+            carouselPics: picBody["About Us"],
+        }) 
+    }
 
     render(){
         return(
@@ -14,7 +34,7 @@ class Homepage extends React.Component{
                     <title>Department of Mathematics</title>
                 </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh'}}>
-                    <Carousel images={CarouselPics['About Us']} imagesNum={CarouselPics['About Us'].length}/>
+                    <Carousel images={this.state.carouselPics} imagesNum={this.state.carouselPics.length}/>
                     <InfoView 
                     title='Welcome to Department of Mathematics:' 
                     titleColor='darkblue'

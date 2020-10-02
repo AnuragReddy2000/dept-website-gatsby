@@ -18,10 +18,19 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 87vh;
 }
 
-.EventsPageCalendarRow{
-    width: 100%;
-    height: 72vh;
+@media screen and (min-width: 801px){
+    .EventsPageCalendarRow{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .EventsPageCalendarRow{
+        width: 100%;
+        height: 72vh;
+    }
 }

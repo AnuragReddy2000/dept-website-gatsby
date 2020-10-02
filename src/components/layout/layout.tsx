@@ -23,8 +23,9 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
     this.state = {
       showAnnouncements: false,
       showSlider: false,
-      currentTab: 'Home'
+      currentTab: (typeof window !== `undefined` ? window.location.pathname:'/'),      
     }
+    console.log(this.state.currentTab);
     this.pageRef = React.createRef();
   }
 

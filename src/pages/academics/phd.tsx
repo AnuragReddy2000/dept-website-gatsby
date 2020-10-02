@@ -1,11 +1,32 @@
 import React from 'react';
 import Carousel from '../../components/carousel/carousel';
 import InfoView from '../../components/infoview/infoview';
-import {CarouselPics} from '../../models/CarouselPics';
 import './phd.css';
 import {Helmet} from 'react-helmet';
 
-class PhDPage extends React.Component{
+interface PhDPageState{
+    carouselPics:string[];
+}
+
+interface PhDPageProps{}
+
+class PhDPage extends React.Component<PhDPageProps,PhDPageState>{
+
+    constructor(props: PhDPageProps,state: PhDPageState){
+        super(props,state);
+        this.state={
+            carouselPics:[]
+        }
+    }
+
+    async componentDidMount(){
+        const picResponse = await fetch("/data/carousel.json");
+        const picBody = await picResponse.json();
+        this.setState({
+            carouselPics: picBody["PhD"],
+        }) 
+    }
+
 
     render(){
         return(
@@ -14,7 +35,7 @@ class PhDPage extends React.Component{
                     <title>DMath - PhD</title>
                 </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh', whiteSpace: 'pre-line'}}>
-                    <Carousel images={CarouselPics['PhD']} imagesNum={CarouselPics['PhD'].length}/>
+                    <Carousel images={this.state.carouselPics} imagesNum={this.state.carouselPics.length}/>
                     <InfoView 
                     title='Our Doctoral Programme: ' 
                     titleColor='darkblue'

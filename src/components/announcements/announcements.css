@@ -59,6 +59,8 @@
       font-size: large;
       border-bottom: 1px solid rgb(197, 197, 197);
       margin-left: 3px;
+      text-align: center;
+      width: 100%;
     }
   
     .events{
@@ -75,6 +77,14 @@
       position: sticky;
       position: -webkit-sticky;
       top: 54vh;
+      overflow-y: scroll;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      border-bottom: 1px solid rgb(197, 197, 197);
+    }
+
+    .events::-webkit-scrollbar{
+      display: none;
     }
   
     .closeIcon{
@@ -88,6 +98,7 @@
       position: sticky;
       position: -webkit-sticky;
       bottom: 1vh;
+      margin-top: 20px;
     }
   }
       

@@ -10,7 +10,12 @@ interface AnnouncementsProps{
 
 interface AnnouncementsState{
     announcements: string[];
-    events: string[];
+    events: Event[];
+}
+
+interface Event{
+    name: string;
+    link: string;
 }
 
 class Announcements extends React.Component<AnnouncementsProps,AnnouncementsState>{
@@ -45,7 +50,7 @@ class Announcements extends React.Component<AnnouncementsProps,AnnouncementsStat
                 </div>
                 <div className='events'>
                     <p className='announceTitle'> Upcoming Events:</p>
-                    {this.state.events.map(element => <p className='announceList' > <BsDot/> {element}</p>)}
+                    {this.state.events.map(element => <a href={element.link} style={{textDecoration:'none'}} target='_blank'><p className='announceList' > <BsDot/> {element.name}</p></a>)}
                 </div>    
                 <a href='/news/events' className='footerText'><p><i>visit here for more info</i></p></a>
             </div>

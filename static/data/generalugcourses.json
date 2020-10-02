@@ -1,4 +1,4 @@
-export const GeneralUGCourses: Array<Record<string,string>> = [
+[
     {
       "CourseCode": "MA 1110",
       "CourseName": "Elements of Basic Calculus I",
