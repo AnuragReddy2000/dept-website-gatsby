@@ -130,6 +130,17 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
         ]
     },
     {
+        title: 'Achievements',
+        icon: GiAchievement,
+        subTitles: [
+            {
+                tab: 'Internships and Placements',
+                url: '/achievements/placements/',
+                pageType: 'component'
+            },
+        ]
+    },
+    {
         title: 'Admissions',
         icon: AiOutlineUsergroupAdd,
         subTitles: [
@@ -159,17 +170,6 @@ export const DropDownList: Array<{ title: string, icon:IconType, subTitles: Arra
                 url: '/recruitments/project_openings/', 
                 pageType: 'component'
             }
-        ]
-    },
-    {
-        title: 'Achievements',
-        icon: GiAchievement,
-        subTitles: [
-            {
-                tab: 'Internships and Placements',
-                url: '/achievements/placements/',
-                pageType: 'component'
-            },
         ]
     },
     {

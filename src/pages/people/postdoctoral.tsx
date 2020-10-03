@@ -48,7 +48,7 @@ class PostDoctoralPage extends React.Component<PostDoctoralPageProps,PostDoctora
                 <Helmet>
                     <title>DMath - Post Doc</title>
                 </Helmet>
-                {this.state.isLoading ? <p style={{textAlign:'center', position:'fixed', top:'50vh',right:'40vw', color:'darkgray'}}>loading...</p> 
+                {this.state.isLoading ? <p style={{textAlign:'center', position:'fixed', top:'50vh',right:'45vw', color:'darkgray'}}><i>loading...</i></p> 
                 : <div style={{width: '100%', height:'100%'}}>
                     {this.state.postDocList.length===0 ? null : <div style={{width:'100%'}}>
                         <div style={{width: '100%', boxSizing: 'border-box', margin: '3px', padding: '5px'}}>

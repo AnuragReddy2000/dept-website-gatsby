@@ -47,7 +47,7 @@ class DoctoralPage extends React.Component<DoctoralPageProps,DoctoralPageState>{
                     <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>Doctoral Students:</p>
                 </div>
                 <div className='docinfoContent'>
-                    {this.state.isLoading ? <p style={{textAlign:'center', position:'fixed', top:'50vh', right:'40vw', color:'darkgray'}}>loading...</p> 
+                    {this.state.isLoading ? <p style={{textAlign:'center', position:'fixed', top:'50vh', right:'45vw', color:'darkgray'}}><i>loading...</i></p> 
                     : this.state.data.map(value => <ProfileView Name={value.name} email={value.email} Area={value.area} supervisor={'Supervisor: ' + value.mentor} Image={value.image} link={value.link}/>)}
                 </div>
             </div>

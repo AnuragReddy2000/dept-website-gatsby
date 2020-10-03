@@ -7,7 +7,8 @@ import {Helmet} from 'react-helmet';
 interface PublicationsPageState{
     currentYear: string;
     dropDownOpen: boolean;
-    publications: any
+    publications: any,
+    isLoading: boolean
 }
 
 interface PublicationsPageProps{}
@@ -24,7 +25,8 @@ class PublicationsPage extends React.Component<PublicationsPageProps,Publication
         this.state = {
             currentYear: "2020",
             dropDownOpen: false,
-            publications: undefined
+            publications: undefined,
+            isLoading: true
         }
     }
 
@@ -45,7 +47,8 @@ class PublicationsPage extends React.Component<PublicationsPageProps,Publication
         const response = await fetch("/data/publications.json");
         const body = await response.json();
         this.setState({
-            publications: body
+            publications: body,
+            isLoading: false
         })
     }
 
@@ -73,7 +76,8 @@ class PublicationsPage extends React.Component<PublicationsPageProps,Publication
                     </div>
                 </div> : null}
                 <div className='publicationsColumn'>
-                    {publications.map(item => <div className='publicationPageLine'>
+                    {this.state.isLoading ? <p style={{textAlign:'center', position:'fixed', top:'50vh',right:'45vw', color:'darkgray'}}><i>loading...</i></p> 
+                    :publications.map(item => <div className='publicationPageLine'>
                         <BsDot size={32}/><p style={{width: '95%'}}> {item.people + ', '} <i style={{color:'darkblue'}}>{item.name}</i> {' ' + item.details}</p>
                     </div>)}
                 </div>

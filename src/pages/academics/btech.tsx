@@ -1,8 +1,6 @@
 import React from 'react';
 import InfoView from '../../components/infoview/infoview';
 import './btech.css'
-import ubd_quote from '../../images/academics/btechMnC/ubd_quote.png';
-import ranks from '../../images/academics/btechMnC/ranks.jpg';
 import {Helmet} from 'react-helmet';
 
 class BtechMnCPage extends React.Component{
@@ -15,7 +13,7 @@ class BtechMnCPage extends React.Component{
                 </Helmet>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh', marginBottom:'1vh'}}>
                     <div style={{width:'100%', alignItems:'center', display:'flex', flexDirection:'row', justifyContent:'center', paddingTop:'15px', paddingBottom:'15px'}}>
-                        <img src={ubd_quote} className='MnCPic'/>
+                        <img src={"/images/academics/btechMnC/ubd_quote.png"} className='MnCPic'/>
                     </div>
                     <InfoView 
                     title='B.Tech (Mathematics and Computing): ' 
@@ -33,7 +31,7 @@ class BtechMnCPage extends React.Component{
                 ]}
                 />
                 <div style={{display:'flex',flexDirection:'column',padding:'10px',backgroundColor:'rgb(250,250,250)'}}>
-                    <img src={ranks} width='100%'></img>
+                    <img src={"/images/academics/btechMnC/ranks.jpg"} width='100%'></img>
                 </div>
                 <div className='bmpInfoContent'>
                     <InfoView 

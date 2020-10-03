@@ -8,6 +8,7 @@ interface SeminarPageState{
     currentYear: string
     dropDownOpen: boolean
     seminars: any
+    isLoading: boolean
 }
 
 interface SeminarPageProps{}
@@ -26,7 +27,8 @@ class SeminarPage extends React.Component<SeminarPageProps,SeminarPageState>{
         this.state = {
             currentYear: "2019",
             dropDownOpen: false,
-            seminars: undefined
+            seminars: undefined,
+            isLoading: true
         }
     }
 
@@ -34,7 +36,8 @@ class SeminarPage extends React.Component<SeminarPageProps,SeminarPageState>{
         const response = await fetch("/data/seminars.json");
         const body = await response.json();
         this.setState({
-            seminars: body
+            seminars: body,
+            isLoading: false
         })
     }
 
@@ -77,7 +80,8 @@ class SeminarPage extends React.Component<SeminarPageProps,SeminarPageState>{
                     </div>
                 </div> : null}
                 <div className='seminarLists'>
-                    {seminarList.map(value => <TableView title={value.Topic} sno={value.SNo} speaker={value.Speaker} content={value.Abstract} dateVenue={value.DateVenue}/>)}
+                    {this.state.isLoading ? <p style={{textAlign:'center', position:'fixed', top:'50vh',right:'45vw', color:'darkgray'}}><i>loading...</i></p> 
+                    :seminarList.map(value => <TableView title={value.Topic} sno={value.SNo} speaker={value.Speaker} content={value.Abstract} dateVenue={value.DateVenue}/>)}
                 </div>
             </div>
         )

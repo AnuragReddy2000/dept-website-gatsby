@@ -45,7 +45,7 @@ class BtechAndMScPage extends React.Component<BtechAndMScPageProps,BtechAndMScPa
                 <div style={{width: '100%', boxSizing: 'border-box', margin: '3px', padding: '5px'}}>
                     <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>B.Tech and M.Sc students:</p>
                 </div>
-                {this.state.isLoading ? <p style={{textAlign:'center', position:'fixed', top:'50vh', color:'darkgray'}}>loading...</p> 
+                {this.state.isLoading ? <p style={{textAlign:'center', position:'fixed', top:'50vh', color:'darkgray'}}><i>loading...</i></p> 
                 : this.state.data.map(value => <div className='studentsBatch'>
                     <Carousel images={[value.grpImage]} imagesNum={1}/>
                     <div className='batchTitle'>

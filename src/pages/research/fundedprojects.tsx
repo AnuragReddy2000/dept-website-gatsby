@@ -13,6 +13,7 @@ interface FundedProject{
 
 interface FundedProjectsState{
     projects: FundedProject[];
+    isLoading: boolean;
 }
 
 interface FundedProjectsProps{}
@@ -21,7 +22,8 @@ class FundedProjectsPage extends React.Component<FundedProjectsProps,FundedProje
     constructor(props:FundedProjectsProps,state:FundedProjectsState){
         super(props,state);
         this.state={
-            projects:[]
+            projects:[],
+            isLoading:true
         }
     }
 
@@ -29,7 +31,8 @@ class FundedProjectsPage extends React.Component<FundedProjectsProps,FundedProje
         const response = await fetch("/data/fundedprojects.json");
         const body = await response.json();
         this.setState({
-            projects: body as FundedProject[]
+            projects: body,
+            isLoading: false
         })
     }
 
@@ -42,7 +45,8 @@ class FundedProjectsPage extends React.Component<FundedProjectsProps,FundedProje
                 <div className='FundedProjectsHeader'>
                     <p style={{margin: '0px', padding: '0px', color: 'darkblue', fontSize: 'x-large'}}>Funded Projects:</p>
                 </div>
-                {this.state.projects.map(value => <div><TableView title={value.title} speaker={value.prof} dateVenue={(value.openings==='Yes') ? "Open": "Openings Closed"} content={'Grant Agency: ' + value.agency + '\n' + 'Time Period: ' + value.duration} overrideDateVenueWidth='40%'/></div>)}
+                {this.state.isLoading ? <p style={{textAlign:'center', position:'fixed', top:'50vh',right:'45vw', color:'darkgray'}}><i>loading...</i></p> 
+                : this.state.projects.map(value => <div><TableView title={value.title} speaker={value.prof} dateVenue={(value.openings==='Yes') ? "Open": "Openings Closed"} content={'Grant Agency: ' + value.agency + '\n' + 'Time Period: ' + value.duration} overrideDateVenueWidth='40%'/></div>)}
             </div>
         )
     }

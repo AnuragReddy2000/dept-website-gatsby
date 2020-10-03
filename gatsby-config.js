@@ -10,7 +10,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/favicon`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -31,7 +31,7 @@ module.exports = {
         background_color: `#fafafa`,
         theme_color: `#fafafa`,
         display: `standalone`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        icon: `src/favicon/icon.png`, // This path is relative to the root of the site.
         icons: [
           {
             "src": "favicons/icon-48x48.png",
