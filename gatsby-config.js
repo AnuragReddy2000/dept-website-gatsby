@@ -4,6 +4,7 @@ module.exports = {
     description: `The Department of Mathematics was one of the six departments that was founded along with the Institute in 2008`,
     author: `Anurag`,
   },
+  assetPrefix: "assets",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -11,6 +12,12 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/favicon`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-asset-path",
+      options: {
+        fileTypes: ["js", "map"],
       },
     },
     `gatsby-transformer-sharp`,
