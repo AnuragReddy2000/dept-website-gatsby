@@ -7,7 +7,7 @@ import {Helmet} from 'react-helmet';
 interface PublicationsPageState{
     currentYear: string;
     dropDownOpen: boolean;
-    publications: any,
+    publications: Array<{"year":string, "publications":Publication[]}>,
     isLoading: boolean
 }
 
@@ -25,7 +25,7 @@ class PublicationsPage extends React.Component<PublicationsPageProps,Publication
         this.state = {
             currentYear: "2020",
             dropDownOpen: false,
-            publications: undefined,
+            publications: [],
             isLoading: true
         }
     }
@@ -45,16 +45,21 @@ class PublicationsPage extends React.Component<PublicationsPageProps,Publication
 
     async componentDidMount(){
         const response = await fetch("/data/publications.json");
-        const body = await response.json();
+        const body = await response.json() as {"publications":Array<{"year":string, "publications":Publication[]}>};
         this.setState({
-            publications: body,
+            publications: body.publications,
             isLoading: false
         })
     }
 
+    getPublications = (publicationJson: Array<{"year":string, "publications": Publication[]}>, currentYear: string) => {
+        let output = publicationJson.find(x=>x.year===currentYear)
+        return (output) ? output.publications : [] as Publication[]
+    }
+
 
     render(){
-        const publications = (this.state.publications===undefined) ? []:this.state.publications[this.state.currentYear] as Publication[];
+        const publications = (this.state.publications===undefined) ? []:this.getPublications(this.state.publications,this.state.currentYear);
 
         return(
             <div className='publicationsPage'>

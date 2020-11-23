@@ -34,9 +34,9 @@ class FacultyPage extends React.Component<FacultyPageProps,FacultyPageState>{
 
     async componentDidMount(){
         const response = await fetch("/data/faculty.json");
-        const body = await response.json();
+        const body = await response.json() as {"faculty": Faculty[]};
         this.setState({
-            facultyList: body,
+            facultyList: body.faculty,
             isLoading: false
         })
     }

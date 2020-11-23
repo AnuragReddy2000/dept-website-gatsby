@@ -34,9 +34,9 @@ class GeneralUGPage extends React.Component<GeneralUGPageProps, GeneralUGPageSta
             carouselPics: picBody["General UG"],
         }) 
         const response = await fetch("/data/generalugcourses.json");
-        const body = await response.json();
+        const body = await response.json() as {"generalugcourses":CourseData[]};
         this.setState({
-            data: body,
+            data: body.generalugcourses,
         })
     }
 

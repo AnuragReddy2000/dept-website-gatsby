@@ -1,4 +1,5 @@
-[
+{
+  "generalugcourses":[
     {
       "CourseCode": "MA 1110",
       "CourseName": "Elements of Basic Calculus I",
@@ -49,4 +50,5 @@
       "CourseName": "Introduction to Statistics",
       "Syllabus":"Random sampling, Estimation of parameters, Confidence Intervals, Testing of Hypothesis, Goodness of fit, Nonparametric tests, Correlation Analysis."
     }
-]
+  ]
+}

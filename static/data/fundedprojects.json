@@ -1,4 +1,5 @@
-[
+{
+  "fundedprojects":[
     {
       "title": "Invariant subspaces of a subclass of norm attaining operators",
       "prof": "Dr G Ramesh",
@@ -62,4 +63,5 @@
       "duration": "Mar 2010 to Mar 2013",
       "openings": "No"
     }
-]
+  ]
+}

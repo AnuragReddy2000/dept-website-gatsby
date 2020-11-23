@@ -30,9 +30,9 @@ class DoctoralPage extends React.Component<DoctoralPageProps,DoctoralPageState>{
 
     async componentDidMount(){
         const response = await fetch("/data/doctoral.json");
-        const body = await response.json();
+        const body = await response.json() as {"doctoral":Doctoral[]};
         this.setState({
-            data: body,
+            data: body.doctoral,
             isLoading:false
         })
     }

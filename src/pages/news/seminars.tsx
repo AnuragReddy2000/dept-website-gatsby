@@ -7,14 +7,13 @@ import {Helmet} from 'react-helmet';
 interface SeminarPageState{
     currentYear: string
     dropDownOpen: boolean
-    seminars: any
+    seminars: Array<{"year":string, "seminars": Seminar[]}>
     isLoading: boolean
 }
 
 interface SeminarPageProps{}
 
 interface Seminar{
-    SNo: string
     Topic: string
     Abstract: string
     Speaker: string
@@ -27,16 +26,16 @@ class SeminarPage extends React.Component<SeminarPageProps,SeminarPageState>{
         this.state = {
             currentYear: "2019",
             dropDownOpen: false,
-            seminars: undefined,
+            seminars: [],
             isLoading: true
         }
     }
 
     async componentDidMount(){
         const response = await fetch("/data/seminars.json");
-        const body = await response.json();
+        const body = await response.json() as {"seminars":Array<{"year":string, "seminars": Seminar[]}>};
         this.setState({
-            seminars: body,
+            seminars: body.seminars,
             isLoading: false
         })
     }
@@ -48,14 +47,19 @@ class SeminarPage extends React.Component<SeminarPageProps,SeminarPageState>{
         })
     }
 
-    toggleDropDown =()=>{
+    toggleDropDown = () => {
         this.setState({
             dropDownOpen: !this.state.dropDownOpen
         })
     }
 
+    getSeminarList = (seminarsJson: Array<{"year":string, "seminars": Seminar[]}>, currentYear: string) => {
+        let output = seminarsJson.find(x=>x.year===currentYear)
+        return (output) ? output.seminars : [] as Seminar[]
+    }
+
     render(){
-        const seminarList = (this.state.seminars===undefined) ? [] : this.state.seminars[this.state.currentYear] as Seminar[];
+        const seminarList = (this.state.seminars===[]) ? [] : (this.getSeminarList(this.state.seminars,this.state.currentYear));
 
         return(
             <div className='seminarPage'>
@@ -81,7 +85,7 @@ class SeminarPage extends React.Component<SeminarPageProps,SeminarPageState>{
                 </div> : null}
                 <div className='seminarLists'>
                     {this.state.isLoading ? <p style={{textAlign:'center', position:'fixed', top:'50vh',right:'45vw', color:'darkgray'}}><i>loading...</i></p> 
-                    :seminarList.map(value => <TableView title={value.Topic} sno={value.SNo} speaker={value.Speaker} content={value.Abstract} dateVenue={value.DateVenue}/>)}
+                    :seminarList.map(value => <TableView title={value.Topic} speaker={value.Speaker} content={value.Abstract} dateVenue={value.DateVenue}/>)}
                 </div>
             </div>
         )

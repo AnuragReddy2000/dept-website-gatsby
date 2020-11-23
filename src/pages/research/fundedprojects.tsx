@@ -29,9 +29,9 @@ class FundedProjectsPage extends React.Component<FundedProjectsProps,FundedProje
 
     async componentDidMount(){
         const response = await fetch("/data/fundedprojects.json");
-        const body = await response.json();
+        const body = await response.json() as {'fundedprojects':FundedProject[]};
         this.setState({
-            projects: body,
+            projects: body.fundedprojects,
             isLoading: false
         })
     }
