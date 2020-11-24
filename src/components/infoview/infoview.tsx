@@ -6,8 +6,7 @@ interface InfoViewProps{
     image?: string;
     info: string[];
     titleColor?: string;
-    link?: string;
-    linkText?: string;
+    links?: {"link":string,"linktext":string}[]
     rightFooter?: string;
 }
 
@@ -25,8 +24,8 @@ class InfoView extends React.Component<InfoViewProps>{
                     <img src={this.props.image} width='100%' height='100%'/>
                 </div>
                 {this.props.info.map((element, index) => <p key={index} className='content'>{element}</p>)}
-                <p style={{alignSelf: 'flex-start', marginTop:'auto'}}><a href={this.props.link} target='_blank'>{this.props.linkText}</a></p>
-                <p style={{alignSelf:'flex-end'}}>{this.props.rightFooter}</p>
+                {this.props.links ? this.props.links.map(each => <p style={{alignSelf: 'flex-start', marginTop:'auto'}}><a href={each.link} target='_blank'>{each.linktext}</a></p>):null}
+                {this.props.rightFooter ? <p style={{alignSelf:'flex-end'}}>{this.props.rightFooter}</p>: null}
             </div>
         )
     }

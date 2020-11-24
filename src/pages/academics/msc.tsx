@@ -27,14 +27,22 @@ class MScPage extends React.Component{
                     <InfoView 
                     title='Brochure' 
                     info={['Wondering why do M.Sc at IIT Hyderabad? Click on the icon above or the link below to know all the details about the programme at a glance.']}
-                    link='/pdfs/msc_brochure.pdf'
-                    linkText='Link to the Brochure'
+                    links={[
+                        {
+                            "link":'/pdfs/msc_brochure.pdf',
+                            "linktext":'Link to the Brochure'
+                        }
+                    ]}
                     />
                     <InfoView 
                     title='Curriculum' 
                     info={['The entire course curriculum for the programme along with the list of electives can be found under the following link.']}
-                    link='/pdfs/MscCurriculum2020.pdf'
-                    linkText='Link to the Curriculum'
+                    links={[
+                        {
+                            "link":'/pdfs/MscCurriculum2020.pdf',
+                            "linktext":'Link to the Curriculum'
+                        }
+                    ]}
                     />
                 </div>
             </div>

@@ -1,64 +1,52 @@
 import React from "react"
-import create_json_display from "../../components/json_display/display_util"
-import firebase from "firebase"
+import create_json_display from "../../utils/display_util"
+import {FirebaseUtils} from "../../utils/firebase_util"
 
-interface PubsPageState{
+interface ConsolePageState{
     currentPage: string,
     data: Object,
     isPageSelected: boolean,
     schemas: Object,
     isUserLoggedIn: boolean
-    app: firebase.app.App
 }
 
-interface PubsPageProps{}
+interface ConsolePageProps{}
 
-class PubsPage extends React.Component<PubsPageProps,PubsPageState>{
-    constructor(props: PubsPageProps,state: PubsPageState){
+class ConsolePage extends React.Component<ConsolePageProps,ConsolePageState>{
+    constructor(props: ConsolePageProps,state: ConsolePageState){
         super(props,state);
         this.state = {
             currentPage: "",
             data:{},
             isPageSelected: false,
             schemas:{},
-            app: (!firebase.apps.length)? firebase.initializeApp({
-                apiKey: "AIzaSyDCbxvztZKuY7jT2-QrjYYja4Pis_nvjgw",
-                authDomain: "websitetrial-751df.firebaseapp.com",
-                databaseURL: "https://websitetrial-751df.firebaseio.com",
-                projectId: "websitetrial-751df",
-                storageBucket: "websitetrial-751df.appspot.com",
-                messagingSenderId: "753007707796",
-                appId: "1:753007707796:web:c47ac33bf9e0e0a34dd681"
-            }):firebase.apps[0],
-            isUserLoggedIn: (firebase.auth().currentUser) ? false:true,
+            isUserLoggedIn: false,
         }
     }
 
     login = () =>{
         let updateLogStatus = () => {this.setState({isUserLoggedIn: true})}
-        let provider = new firebase.auth.GoogleAuthProvider();
-        this.state.app.auth().signInWithPopup(provider).then(function(result) {
-            updateLogStatus();
-            alert("Welcome, " + result.user?.displayName)
-        }).catch(function(error) {
-            alert("Oops... login failed. Please try again")
-        });
+        FirebaseUtils.login(updateLogStatus)
     }
 
     logout = () => {
         let updateLogStatus = () => {this.setState({isUserLoggedIn: false})}
-        this.state.app.auth().signOut().then(function(result){
-            updateLogStatus()
-            alert("Sucessfully logged out")
-        }).catch(function(error){alert("Oops... failed to logout")})
+        FirebaseUtils.logout(updateLogStatus)
     }
 
     async componentDidMount(){
+        const response = await FirebaseUtils.getPageData("schemas")
+        this.setState({
+            schemas: response
+        })
+        /*
         const response = await fetch("/data/schemas.json");
         const body = await response.json() as Object;
         this.setState({
             schemas: body
         })
+        */
+        window.addEventListener("beforeunload",(event)=>{this.logout()})
     }
 
     async getPage(page:string) {
@@ -69,23 +57,14 @@ class PubsPage extends React.Component<PubsPageProps,PubsPageState>{
             }) 
         }
         else{
-            let displayData = (body: object) => {
-                this.setState({
-                    currentPage:page,
-                    data: body,
-                    isPageSelected: true
-                }) 
-            }
-            let url = "/data/" + page + ".json"
+            const response = await FirebaseUtils.getPageData(page)
+            this.setState({
+                currentPage:page,
+                data: response,
+                isPageSelected: true
+            }) 
             /*
-            this.state.app.firestore().collection("data").doc(page).get().then(function(doc){
-                //displayData(doc?doc.data() as Object:{});
-                console.log(doc?doc.data():{})
-            }).catch(function(error){
-                alert("Oops... something went wrong. Try again")
-                console.log(error)
-            })
-            */
+            let url = "/data/" + page + ".json"
             const response = await fetch(url);
             const body = await response.json() as Object;
             this.setState({
@@ -93,16 +72,19 @@ class PubsPage extends React.Component<PubsPageProps,PubsPageState>{
                 data: body,
                 isPageSelected: true
             }) 
-            console.log(body)
+            */
         }
     }
 
     saveChanges=(page_data:Object)=>{
-        this.state.app.firestore().collection('data').doc(this.state.currentPage).set(page_data).then(function(result){
-            alert("Sucessfully saved changes. Thank you!")
-        }).catch(function(error){
-            alert("Oops... Sorry, unable to save changes. Try again")
-        })
+        if(this.state.isUserLoggedIn){
+            if(confirm("Are you sure you want to submit the following changes?")){
+                FirebaseUtils.saveChanges(this.state.currentPage,page_data)
+            }
+        }
+        else{
+            alert("Please login with your IITH account and then make your changes")
+        }
     }
 
     changeJSON = (new_data: Object) => {
@@ -112,7 +94,7 @@ class PubsPage extends React.Component<PubsPageProps,PubsPageState>{
     }
 
     render(){
-        let pub = this.state.data
+        let pub = JSON.parse(JSON.stringify(this.state.data))
         return (
             <div>
                 <div style={{width: '100%', marginBottom:'1vh',backgroundColor:'rgb(250,250,250)',display:'flex', flexDirection:"column",justifyContent:"flex-start", alignItems:"center", border:'1px solid rgb(170, 170, 170)', textAlign:"center"}}>
@@ -129,15 +111,16 @@ class PubsPage extends React.Component<PubsPageProps,PubsPageState>{
                             <option value="faculty">Faculty</option>
                             <option value="fundedprojects">Funded Projects</option>
                             <option value="generalugcourses">General UG Courses</option>
-                            <option value="phd_admissions">PhD Admissions page</option>
                             <option value="postdoc">Post Doctoral Candidates</option>
                             <option value="publications">Publications</option>
                             <option value="seminars">Seminars</option>
+                            <option value="phd_admissions">PhD Admissions Page</option>
                         </select>
                     </div>
-                    <div style={{display:'flex',flexDirection:"row",width:"95%",justifyContent:"flex-end"}}>
-                        {<button onClick={()=>{(this.state.isUserLoggedIn)?this.logout():this.login()}} style={{margin:"3px"}}>{(this.state.isUserLoggedIn)? "Log out":"Log in"}</button>}
-                        {this.state.isPageSelected? <button title='Submit' onClick={()=>{this.saveChanges(pub as Object)}} style={{alignSelf:"flex-end", margin:"3px"}}>Submit changes</button> : null}
+                    <div style={{display:'flex',flexDirection:"row",width:"95%", justifyContent:"flex-end"}}>
+                        {(this.state.isUserLoggedIn)? <div style={{margin:"3px",alignSelf:"flex-start",textAlign:'left', width:"100%"}}>Current User : {FirebaseUtils.getUser().name} ({FirebaseUtils.getUser().email})</div>:null}
+                        {<button onClick={()=>{(this.state.isUserLoggedIn)?this.logout():this.login()}} style={{margin:"3px",alignSelf:"flex-end", width:"80px"}}>{(this.state.isUserLoggedIn)? "Log out":"Log in"}</button>}
+                        {this.state.isPageSelected? <button title='Submit' onClick={()=>{this.saveChanges(pub)}} style={{alignSelf:"flex-end", margin:"3px",width:"140px"}}>Submit changes</button> : null}
                     </div>
                 </div>
                 <div style={{backgroundColor:"rgb(250,250,250)"}}>
@@ -148,4 +131,4 @@ class PubsPage extends React.Component<PubsPageProps,PubsPageState>{
     }
 }
 
-export default PubsPage;
+export default ConsolePage;

@@ -4,6 +4,7 @@ import Carousel from '../../components/carousel/carousel';
 import {BsDot} from 'react-icons/bs';
 import './alumni.css';
 import {Helmet} from 'react-helmet';
+import {FirebaseUtils} from '../../utils/firebase_util'
 
 interface AlumniPageProps{}
 
@@ -40,8 +41,7 @@ class AlumniPage extends React.Component<AlumniPageProps,AlumniPageState>{
     }
 
     async componentDidMount(){
-        const response = await fetch("/data/alumni.json");
-        const body = await response.json();
+        const body = await FirebaseUtils.getPageData("alumni");
         this.setState({
             phdAlumniList: body.PhDAlumniList,
             mscAlumniList: body.MScAlumniList,

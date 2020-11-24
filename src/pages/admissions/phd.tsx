@@ -2,9 +2,16 @@ import React from 'react';
 import InfoView from '../../components/infoview/infoview';
 import './phd.css';
 import {Helmet} from 'react-helmet';
+import {FirebaseUtils} from '../../utils/firebase_util'
+
+interface InfoViewRaw{
+    header: string;
+    body: string[];
+    links: {"link":string,"linktext":string}[]
+}
 
 interface PhDAdmissionsState{
-    data: any,
+    data: InfoViewRaw[],
     isLoading: boolean
 }
 
@@ -15,15 +22,14 @@ class PhDAdmissions extends React.Component<PhDAdmissionsProps,PhDAdmissionsStat
         super(props,state);
         this.state = {
             isLoading : true,
-            data : undefined
+            data : []
         }
     }
 
     async componentDidMount(){
-        const response = await fetch("/data/phd_admissions.json");
-        const body = await response.json();
+        const body = await FirebaseUtils.getPageData("phd_admissions") as {"components":InfoViewRaw[]};
         this.setState({
-            data : body,
+            data : body.components,
             isLoading : false
         })
     }
@@ -34,13 +40,8 @@ class PhDAdmissions extends React.Component<PhDAdmissionsProps,PhDAdmissionsStat
                 <Helmet>
                     <title>DMath - PhD Admissions</title>
                 </Helmet>
-                {this.state.isLoading ? <div><p>loading...</p></div>
-                    : this.state.data.map((item:any) => (item.type==="para")? <InfoView title={item.header} info={item.body} titleColor='darkblue' link={item.link} linkText={item.linktext}/> 
-                        :<div className='phdAdmissionsMiddle'>
-                            <p style={{color: 'darkblue', fontSize: 'x-large', marginBottom: '3px'}}>{item.header}</p>
-                            {item.keyvals.map((keyval:any) => <p style={{marginBottom: '1.5px'}}>{keyval.name} <a href={keyval.link}>{keyval.linktext}</a></p> )}
-                        </div> ) 
-                }
+                {this.state.isLoading ? <div style={{height:"100%",width:"100%", textAlign:"center"}}><p>loading...</p></div>
+                    : this.state.data.map(each => <InfoView title={each.header} titleColor="darkblue" info={each.body} links={each.links}/>)}
             </div>
         )
     }

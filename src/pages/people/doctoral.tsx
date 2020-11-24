@@ -2,6 +2,7 @@ import React from 'react';
 import ProfileView from '../../components/profileview/profileview';
 import './doctoral.css';
 import {Helmet} from 'react-helmet';
+import {FirebaseUtils} from '../../utils/firebase_util'
 
 interface DoctoralPageState{
     isLoading: boolean;
@@ -29,8 +30,7 @@ class DoctoralPage extends React.Component<DoctoralPageProps,DoctoralPageState>{
     }
 
     async componentDidMount(){
-        const response = await fetch("/data/doctoral.json");
-        const body = await response.json() as {"doctoral":Doctoral[]};
+        const body = await FirebaseUtils.getPageData("doctoral") as {"doctoral":Doctoral[]};
         this.setState({
             data: body.doctoral,
             isLoading:false

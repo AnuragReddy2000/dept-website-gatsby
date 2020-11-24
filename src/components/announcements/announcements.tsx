@@ -2,6 +2,7 @@ import React from'react';
 import './announcements.css';
 import {BsDot} from 'react-icons/bs';
 import {AiOutlineCloseSquare} from 'react-icons/ai';
+import {FirebaseUtils} from "../../utils/firebase_util"
 
 interface AnnouncementsProps{
     changeTab: (tab: string) => void;
@@ -29,8 +30,7 @@ class Announcements extends React.Component<AnnouncementsProps,AnnouncementsStat
     }
 
     async componentDidMount(){
-        const response = await fetch("/data/announcements.json");
-        const body = await response.json();
+        const body = await FirebaseUtils.getPageData("announcements");
         this.setState({
             announcements: body.announcements,
             events: body.events

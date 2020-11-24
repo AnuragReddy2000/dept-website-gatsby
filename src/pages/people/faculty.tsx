@@ -3,6 +3,7 @@ import InfoView from '../../components/infoview/infoview';
 import ProfileView from '../../components/profileview/profileview';
 import './faculty.css';
 import {Helmet} from 'react-helmet';
+import {FirebaseUtils} from '../../utils/firebase_util'
 
 interface Faculty{
     name: string;
@@ -33,8 +34,7 @@ class FacultyPage extends React.Component<FacultyPageProps,FacultyPageState>{
     }
 
     async componentDidMount(){
-        const response = await fetch("/data/faculty.json");
-        const body = await response.json() as {"faculty": Faculty[]};
+        const body = await FirebaseUtils.getPageData("faculty") as {"faculty": Faculty[]};
         this.setState({
             facultyList: body.faculty,
             isLoading: false

@@ -2,6 +2,7 @@ import React from 'react';
 import ProfileView from '../../components/profileview/profileview';
 import './postdoctoral.css';
 import {Helmet} from 'react-helmet';
+import {FirebaseUtils} from '../../utils/firebase_util'
 
 interface PostDoctoralPageState{
     isLoading: boolean;
@@ -33,8 +34,7 @@ class PostDoctoralPage extends React.Component<PostDoctoralPageProps,PostDoctora
     }
 
     async componentDidMount(){
-        const response = await fetch("/data/postdoc.json");
-        const body = await response.json();
+        const body = await FirebaseUtils.getPageData("postdoc");
         this.setState({
             postDocList: body.PostDoctoral,
             formerPostDocList: body.FormerPostDoctoral,

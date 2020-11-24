@@ -2,6 +2,7 @@ import React from 'react';
 import InfoView from '../../components/infoview/infoview';
 import Carousel from '../../components/carousel/carousel';
 import {Helmet} from 'react-helmet';
+import {FirebaseUtils} from "../../utils/firebase_util"
 
 interface OutReachState{
     carouselPics:string[];
@@ -19,8 +20,7 @@ class OutReachEventsPage extends React.Component<OutReachProps,OutReachState>{
     }
 
     async componentDidMount(){
-        const picResponse = await fetch("/data/carousel.json");
-        const picBody = await picResponse.json();
+        const picBody = await FirebaseUtils.getPageData("carousel");
         this.setState({
             carouselPics: picBody["Outreach"],
         }) 

@@ -95,26 +95,20 @@
             }
         ]
     },
-    "phd_admissions":[
-        {
-            "type":"para",
-            "header":"",
-            "body":[""],
-            "link":"",
-            "linktext":""
-        },
-        {
-            "type":"keyvalList",
-            "header":"",
-            "keyvals":[
-                {
-                    "name":"",
-                    "link":"",
-                    "linktext":""
-                }
-            ]
-        }
-    ],
+    "phd_admissions":{
+        "components":[
+            {
+                "header":"",
+                "body":[""],
+                "links":[
+                    {
+                        "link":"",
+                        "linktext":""
+                    }
+                ]
+            }
+        ]
+    },
     "postdoc":{
         "PostDoctoral": [
             {

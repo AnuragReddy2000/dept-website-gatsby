@@ -3,6 +3,7 @@ import './publications.css';
 import {BsDot} from 'react-icons/bs';
 import {AiFillCaretDown} from 'react-icons/ai';
 import {Helmet} from 'react-helmet';
+import {FirebaseUtils} from '../../utils/firebase_util'
 
 interface PublicationsPageState{
     currentYear: string;
@@ -44,8 +45,7 @@ class PublicationsPage extends React.Component<PublicationsPageProps,Publication
     }
 
     async componentDidMount(){
-        const response = await fetch("/data/publications.json");
-        const body = await response.json() as {"publications":Array<{"year":string, "publications":Publication[]}>};
+        const body = await FirebaseUtils.getPageData("publications") as {"publications":Array<{"year":string, "publications":Publication[]}>};
         this.setState({
             publications: body.publications,
             isLoading: false

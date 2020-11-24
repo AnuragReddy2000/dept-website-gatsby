@@ -1,6 +1,7 @@
 import React from 'react';
 import './marquee.css';
 import {BsDot} from 'react-icons/bs';
+import {FirebaseUtils} from "../../utils/firebase_util"
 
 interface MarqueeState{
     announcements: string[];
@@ -24,8 +25,7 @@ class Marquee extends React.Component<MarqueeProps,MarqueeState>{
     }
 
     async componentDidMount(){
-        const response = await fetch("/data/announcements.json");
-        const body = await response.json();
+        const body = await FirebaseUtils.getPageData("announcements");
         this.setState({
             announcements: body.announcements,
             events: body.events

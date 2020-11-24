@@ -3,6 +3,7 @@ import Carousel from '../components/carousel/carousel';
 import InfoView from '../components/infoview/infoview';
 import './homepage.css';
 import {Helmet} from 'react-helmet';
+import {FirebaseUtils} from "../utils/firebase_util"
 
 interface HomepageState{
     carouselPics:string[];
@@ -20,8 +21,7 @@ class Homepage extends React.Component<HomepageProps,HomepageState>{
     }
 
     async componentDidMount(){
-        const picResponse = await fetch("/data/carousel.json");
-        const picBody = await picResponse.json();
+        const picBody = await FirebaseUtils.getPageData("carousel");
         this.setState({
             carouselPics: picBody["About Us"],
         }) 

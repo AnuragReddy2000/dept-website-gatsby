@@ -2,6 +2,7 @@ import React from 'react';
 import TableView from '../../components/tableview/tableview';
 import './fundedprojects.css';
 import {Helmet} from 'react-helmet';
+import {FirebaseUtils} from '../../utils/firebase_util'
 
 interface FundedProject{
     title:string;
@@ -28,8 +29,7 @@ class FundedProjectsPage extends React.Component<FundedProjectsProps,FundedProje
     }
 
     async componentDidMount(){
-        const response = await fetch("/data/fundedprojects.json");
-        const body = await response.json() as {'fundedprojects':FundedProject[]};
+        const body = await FirebaseUtils.getPageData("fundedprojects") as {'fundedprojects':FundedProject[]};
         this.setState({
             projects: body.fundedprojects,
             isLoading: false

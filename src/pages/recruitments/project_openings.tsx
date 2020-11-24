@@ -11,7 +11,12 @@ class FacultyRecruitment extends React.Component{
                     <title>DMath - Project Openings</title>
                 </Helmet>
                 <InfoView title='Project Openings:' titleColor='darkblue' info={['Interested candidates can write to the project PI for more details. Please see the following page for possible openings:',]}
-                    link='/research/fundedprojects' linkText='Details of Funded Projects'
+                    links={[
+                        {
+                            "link":'/research/fundedprojects',
+                            "linktext":'Details of Funded Projects'
+                        }
+                    ]}
                 />
             </div>
         )

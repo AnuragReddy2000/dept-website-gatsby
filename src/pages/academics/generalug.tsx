@@ -3,6 +3,7 @@ import Carousel from '../../components/carousel/carousel';
 import InfoView from '../../components/infoview/infoview';
 import TableView from '../../components/tableview/tableview';
 import {Helmet} from 'react-helmet';
+import {FirebaseUtils} from '../../utils/firebase_util'
 
 interface GeneralUGPageState{
     data: CourseData[];
@@ -28,13 +29,11 @@ class GeneralUGPage extends React.Component<GeneralUGPageProps, GeneralUGPageSta
     }
 
     async componentDidMount(){
-        const picResponse = await fetch("/data/carousel.json");
-        const picBody = await picResponse.json();
+        const picBody = await FirebaseUtils.getPageData("carousel")
         this.setState({
-            carouselPics: picBody["General UG"],
+            carouselPics: picBody["General UG" as keyof Object] as string[],
         }) 
-        const response = await fetch("/data/generalugcourses.json");
-        const body = await response.json() as {"generalugcourses":CourseData[]};
+        const body = await FirebaseUtils.getPageData("generalugcourses") as {"generalugcourses":CourseData[]};
         this.setState({
             data: body.generalugcourses,
         })

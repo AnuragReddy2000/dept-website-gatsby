@@ -29,20 +29,32 @@ class BtechMnCPage extends React.Component{
                     <InfoView 
                     title='Brochure:' 
                     info={['Wondering what is B.Tech (M&C) or why do B.Tech (M&C) at IIT Hyderabad? Click on the icon above or the link below to know all the details about the programme at a glance.']}
-                    link='/pdfs/MnC_Brochure_2020.pdf'
-                    linkText='Link to the Brochure'
+                    links={[
+                        {
+                            "link":'/pdfs/MnC_Brochure_2020.pdf',
+                            "linktext":'Link to the Brochure'
+                        }
+                    ]}
                     />
                     <InfoView 
                     title='Curriculum:' 
                     info={['The entire course curriculum for the programme along with the list of electives can be found under the following link.']}
-                    link = '/academics/curriculum'
-                    linkText = 'Link to the Curriculum'
+                    links={[
+                        {
+                            "link":'/academics/curriculum',
+                            "linktext":'Link to the Curriculum'
+                        }
+                    ]}
                     />
                     <InfoView 
                     title='FAQs:' 
                     info={['Still have some questions unanswered? Or, some lingering doubts? Check out our FAQ page - who knows, you may only be replicating the neuronal state some one else was in not long ago !']}
-                    link = '/academics/btech/faq'
-                    linkText = 'Link to FAQs'
+                    links={[
+                        {
+                            "link":'/academics/btech/faq',
+                            "linktext":'Link to FAQs'
+                        }
+                    ]}
                     />
                 </div>
             </div>

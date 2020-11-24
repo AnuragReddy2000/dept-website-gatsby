@@ -3,6 +3,7 @@ import TableView from '../../components/tableview/tableview';
 import './seminars.css';
 import {AiFillCaretDown} from 'react-icons/ai';
 import {Helmet} from 'react-helmet';
+import {FirebaseUtils} from '../../utils/firebase_util'
 
 interface SeminarPageState{
     currentYear: string
@@ -32,8 +33,7 @@ class SeminarPage extends React.Component<SeminarPageProps,SeminarPageState>{
     }
 
     async componentDidMount(){
-        const response = await fetch("/data/seminars.json");
-        const body = await response.json() as {"seminars":Array<{"year":string, "seminars": Seminar[]}>};
+        const body = await FirebaseUtils.getPageData("seminars") as {"seminars":Array<{"year":string, "seminars": Seminar[]}>};
         this.setState({
             seminars: body.seminars,
             isLoading: false

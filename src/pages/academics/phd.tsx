@@ -3,6 +3,7 @@ import Carousel from '../../components/carousel/carousel';
 import InfoView from '../../components/infoview/infoview';
 import './phd.css';
 import {Helmet} from 'react-helmet';
+import {FirebaseUtils} from "../../utils/firebase_util"
 
 interface PhDPageState{
     carouselPics:string[];
@@ -20,8 +21,7 @@ class PhDPage extends React.Component<PhDPageProps,PhDPageState>{
     }
 
     async componentDidMount(){
-        const picResponse = await fetch("/data/carousel.json");
-        const picBody = await picResponse.json();
+        const picBody = await FirebaseUtils.getPageData("carousel");
         this.setState({
             carouselPics: picBody["PhD"],
         }) 
@@ -46,14 +46,22 @@ class PhDPage extends React.Component<PhDPageProps,PhDPageState>{
                     <InfoView 
                     title='Brochure' 
                     info={['Wondering why do Ph.D. at IIT Hyderabad? Click on the icon above or the link below to know all the details about the programme at a glance.']}
-                    link='/pdfs/phd_brochure.pdf'
-                    linkText='Link to the Brochure'
+                    links={[
+                        {
+                            "link":'/pdfs/phd_brochure.pdf',
+                            "linktext":'Link to the Brochure'
+                        }
+                    ]}
                     />
                     <InfoView 
                     title='Curriculum' 
                     info={['The entire course curriculum for the programme along with the list of electives can be found under the following link.']}
-                    link='/pdfs/phd_curriculum.pdf'
-                    linkText='Link to the Curriculum'
+                    links={[
+                        {
+                            "link":'/pdfs/phd_curriculum.pdf',
+                            "linktext":'Link to the Curriculum'
+                        }
+                    ]}
                     />
                 </div>
             </div>
