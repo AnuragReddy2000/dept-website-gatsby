@@ -28,12 +28,15 @@ function create_json_display(input: any,schema: Object, changeState:()=>void): J
 }
 
 function arrayElement(array:any[], element: any, index: number,schema: Object, changeState:()=>void): JSX.Element{
-    let output = <div style={{marginLeft:"4px", display:"flex", flexDirection:"row", justifyContent:"flex-end", alignItems:"center"}}>
+    let output = <div style={{marginLeft:"4px", marginBottom:"3px", display:"flex", flexDirection:"row", justifyContent:"flex-end", alignItems:"center"}}>
         <div style={{width:"100%"}}>
             {(typeof element ==="string") ? <TextArea key={uuidv4()} default_text={element} onChange={(new_text:string)=>{array[index] = new_text as any}}/> 
                 : create_json_display(element,schema,changeState)}
         </div>
-        <button style={{marginLeft:"3px"}} title="Remove this entry" onClick={()=>{if(confirm("Are you sure you want to remove this field?")){array.splice(index,1);changeState()}}}>x</button>
+        <div style={{display:"flex", flexDirection:"column", justifyContent:"center"}}>
+            <button style={{marginLeft:"3px"}} title="Remove this entry" onClick={()=>{array.splice(index,0,JSON.parse(JSON.stringify(schema)));changeState()}}>+</button>
+            <button style={{marginLeft:"3px"}} title="Remove this entry" onClick={()=>{if(confirm("Are you sure you want to remove this field?")){array.splice(index,1);changeState()}}}>x</button>
+        </div>
     </div>
     console.log("AE output:" + output)
     return output as JSX.Element
