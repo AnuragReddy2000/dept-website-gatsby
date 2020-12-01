@@ -3,8 +3,9 @@ import './navslider.css';
 import NavTab from './navtab/navtab';
 import DropDownTab from './dropdowntab/dropdowntab';
 import {AiOutlineHome} from 'react-icons/ai';
-import {DropDownList} from '../../models/DropDownsAndTabs';
+import {getIcon} from '../../utils/iconmap_util';
 import {Link} from 'gatsby';
+import {FirebaseUtils} from "../../utils/firebase_util";
 
 interface NavSliderProps{
     currentTab: string;
@@ -13,14 +14,26 @@ interface NavSliderProps{
 
 interface NavSliderState{
     currentDropDown: string;
+    isloading: boolean;
+    pages: Object
 }
 
 class NavSlider extends React.Component<NavSliderProps, NavSliderState>{
     constructor(props: NavSliderProps, state: NavSliderState){
         super(props);
         this.state = {
-            currentDropDown: 'None'
+            currentDropDown: 'None',
+            isloading: true,
+            pages: {}
         }
+    }
+
+    async componentDidMount(){
+        const body = await FirebaseUtils.getPageData("page_routes") as Object;
+        this.setState({
+            pages: body,
+            isloading: false
+        })
     }
 
     changeDropDownTab=(newDropDown: string): void =>{
@@ -35,11 +48,12 @@ class NavSlider extends React.Component<NavSliderProps, NavSliderState>{
     }
 
     render(){
+        const pages = this.state.pages as {"routes":{"section":string,"pages":{name: string, url: string, pageType: string}[]}[]}
         return(
             <div>
                 <div className='Slider'>
                     <NavTab name='Home' onClickEvent={this.home} currentTab={this.props.currentTab} urlLink='/' icon={AiOutlineHome} pageType='component'/>
-                    {DropDownList.map((value,index) =>  <DropDownTab key={index} name={value.title} currentTab={this.props.currentTab} icon={value.icon} currentDropdown={this.state.currentDropDown} onClickEvent={this.props.changeTab} dropDownUpdate={this.changeDropDownTab} contentTabs={value.subTitles}/>)} 
+                    {this.state.isloading ? <div style={{height:"80vh"}}/>:pages.routes.map(tab => <DropDownTab name={tab.section} contentTabs={tab.pages} currentDropdown={this.state.currentDropDown} currentTab={this.props.currentTab} onClickEvent={this.props.changeTab} dropDownUpdate={this.changeDropDownTab} icon={getIcon(tab.section)}/>)} 
                     <div className='contactUs'>
                         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '100%', marginBottom: '0px'}}>
                             <Link to='/misc/contactus' style={{textDecoration: 'none', color: 'inherit', alignSelf: 'flex-start'}}><p style={(this.props.currentTab=='contactus') ? {color: "blue"}:{}} onClick={()=>this.props.changeTab('contactus')}>Contact Us </p></Link>

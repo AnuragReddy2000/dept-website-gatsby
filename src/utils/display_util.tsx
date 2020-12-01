@@ -15,7 +15,7 @@ function create_json_display(input: any,schema: Object, changeState:()=>void): J
     }else{
         let json = input as object 
         let val: any
-        for (const key in json){
+        for (const key in schema){
             val = json[key as (keyof Object)]
             output.push(<div style={{display:"flex", flexDirection:"row", margin:"10px", padding:"6px"}}>
                 <div>{key as string + " : "}</div>
@@ -34,7 +34,7 @@ function arrayElement(array:any[], element: any, index: number,schema: Object, c
                 : create_json_display(element,schema,changeState)}
         </div>
         <div style={{display:"flex", flexDirection:"column", justifyContent:"center"}}>
-            <button style={{marginLeft:"3px"}} title="Remove this entry" onClick={()=>{array.splice(index,0,JSON.parse(JSON.stringify(schema)));changeState()}}>+</button>
+            <button style={{marginLeft:"3px"}} title="Add an entry before this one" onClick={()=>{array.splice(index,0,JSON.parse(JSON.stringify(schema)));changeState()}}>+</button>
             <button style={{marginLeft:"3px"}} title="Remove this entry" onClick={()=>{if(confirm("Are you sure you want to remove this field?")){array.splice(index,1);changeState()}}}>x</button>
         </div>
     </div>

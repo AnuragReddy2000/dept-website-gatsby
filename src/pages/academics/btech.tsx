@@ -41,7 +41,7 @@ class BtechMnCPage extends React.Component{
                     info={['The entire course curriculum for the programme along with the list of electives can be found under the following link.']}
                     links={[
                         {
-                            "link":'/academics/curriculum',
+                            "link":'/academics/curriculum/',
                             "linktext":'Link to the Curriculum'
                         }
                     ]}
@@ -51,7 +51,7 @@ class BtechMnCPage extends React.Component{
                     info={['Still have some questions unanswered? Or, some lingering doubts? Check out our FAQ page - who knows, you may only be replicating the neuronal state some one else was in not long ago !']}
                     links={[
                         {
-                            "link":'/academics/btech/faq',
+                            "link":'/academics/btech/faq/',
                             "linktext":'Link to FAQs'
                         }
                     ]}

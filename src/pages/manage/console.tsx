@@ -115,6 +115,7 @@ class ConsolePage extends React.Component<ConsolePageProps,ConsolePageState>{
                             <option value="publications">Publications</option>
                             <option value="seminars">Seminars</option>
                             <option value="phd_admissions">PhD Admissions Page</option>
+                            <option value="page_routes">Page Navigation</option>
                         </select>
                     </div>
                     <div style={{display:'flex',flexDirection:"row",width:"95%", justifyContent:"flex-end"}}>

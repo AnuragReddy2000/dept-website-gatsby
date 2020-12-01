@@ -161,5 +161,19 @@
                 ]
             }
         ]
+    },
+    "page_routes":{
+        "routes":[
+            {
+                "section": "",
+                "pages": [
+                    {
+                        "name": "",
+                        "url": "",
+                        "pageType": ""
+                    }
+                ]
+            }
+        ]
     }
 }

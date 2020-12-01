@@ -13,7 +13,7 @@ interface DropDownTabProp{
     currentDropdown: string;
     onClickEvent: (tab: string) => void;
     dropDownUpdate: (dropDownName: string) => void;
-    contentTabs: Array<{tab: string, url: string, pageType: string}>;
+    contentTabs: Array<{name: string, url: string, pageType: string}>;
     icon: IconType
 }
 
@@ -35,7 +35,7 @@ class DropDownTab extends React.Component<DropDownTabProp,DropDownTabState>{
                     <NavTab name={this.props.name} currentTab={this.props.currentTab} onClickEvent={this.onDropDownClick} icon={this.props.icon}></NavTab>
                     {(this.props.currentDropdown === this.props.name) ? <RiArrowDropUpLine size={28} color='darkblue' style={{width: '12%'}}/> : <RiArrowDropDownLine size={28} color='darkblue' style={{width: '12%'}}/>}
                 </div>
-                {(this.props.currentDropdown === this.props.name) ? this.props.contentTabs.map((tab,index) => <NavTab key={index} name={tab.tab} currentTab={this.props.currentTab} onClickEvent={this.props.onClickEvent} urlLink={tab.url} pageType={tab.pageType}/>) : null}
+                {(this.props.currentDropdown === this.props.name) ? this.props.contentTabs.map((tab,index) => <NavTab key={index} name={tab.name} currentTab={this.props.currentTab} onClickEvent={this.props.onClickEvent} urlLink={tab.url} pageType={tab.pageType}/>) : null}
             </div>
         )
     }

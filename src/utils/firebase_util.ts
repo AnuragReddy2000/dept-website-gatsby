@@ -68,7 +68,7 @@ export class FirebaseUtils {
     public static saveChanges = (currentPage:string, page_data:Object) => {
         const app = FirebaseUtils.getFirebaseApp()
         app?.firestore().collection('data').doc(currentPage).set(page_data).then(function(result){
-            alert("Sucessfully saved changes. Thank you!")
+            alert("Sucessfully saved changes. \nPlease make an entry of this change in the Change log sheet shared with you. \nThank you!")
         }).catch(function(error){
             alert("Oops... Sorry, unable to save changes. This might have happened because, \n i) You may not have the edit access to the data \n ii) You may not have a stable network")
         })

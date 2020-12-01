@@ -29,6 +29,12 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
     this.pageRef = React.createRef();
   }
 
+  componentDidMount(){
+    this.setState({
+      currentTab: (typeof window !== `undefined` ? window.location.pathname:'/')
+    })
+  }
+
   pageRef : any
 
   changeTab = (tab: string):void =>{
