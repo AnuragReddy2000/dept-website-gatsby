@@ -1,6 +1,7 @@
-import React from "react"
-import create_json_display from "../../utils/display_util"
-import {FirebaseUtils} from "../../utils/firebase_util"
+import React from "react";
+import create_json_display from "../../utils/display_util";
+import {FirebaseUtils} from "../../utils/firebase_util";
+import {Helmet} from 'react-helmet';
 
 interface ConsolePageState{
     currentPage: string,
@@ -97,6 +98,9 @@ class ConsolePage extends React.Component<ConsolePageProps,ConsolePageState>{
         let pub = JSON.parse(JSON.stringify(this.state.data))
         return (
             <div>
+                <Helmet>
+                    <title>DMath - Management Console</title>
+                </Helmet>
                 <div style={{width: '100%', marginBottom:'1vh',backgroundColor:'rgb(250,250,250)',display:'flex', flexDirection:"column",justifyContent:"flex-start", alignItems:"center", border:'1px solid rgb(170, 170, 170)', textAlign:"center"}}>
                     <p style={{fontSize:'x-large', color:'darkblue',alignSelf:'center',textAlign:"center"}}>Data Management console</p>
                     <div style={{display:"flex",flexDirection:"row", marginBottom:"10px"}}>

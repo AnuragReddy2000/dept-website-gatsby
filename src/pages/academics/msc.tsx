@@ -11,6 +11,7 @@ class MScPage extends React.Component{
                 <Helmet>
                     <title>DMath - MSc</title>
                 </Helmet>
+                <marquee><b>The department offers M.Sc in two streams, namely M.Sc in Mathematics and M.Sc Mathematics & Computing whereas in the JAM Brochure it was mentioned only M.Sc Mathematics & Computing. We are sorry for the incomplete details in the JAM Brochure.</b></marquee>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh', whiteSpace: 'pre-line'}}>
                     <InfoView 
                     title='Master of Sciences: ' 

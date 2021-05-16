@@ -33,6 +33,7 @@ class Homepage extends React.Component<HomepageProps,HomepageState>{
                 <Helmet>
                     <title>Department of Mathematics</title>
                 </Helmet>
+                <marquee><b>The department offers M.Sc in two streams, namely M.Sc in Mathematics and M.Sc Mathematics & Computing whereas in the JAM Brochure it was mentioned only M.Sc Mathematics & Computing. We are sorry for the incomplete details in the JAM Brochure.</b></marquee>
                 <div style={{width:'100%', backgroundColor:'rgb(250,250,250)', paddingTop: '2vh', marginTop: '1vh'}}>
                     <Carousel images={this.state.carouselPics} imagesNum={this.state.carouselPics.length}/>
                     <InfoView 

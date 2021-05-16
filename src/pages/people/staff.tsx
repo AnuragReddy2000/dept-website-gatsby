@@ -15,6 +15,10 @@ class StaffPage extends React.Component{
                 <div className='spInfoContent'>
                     <ProfileView Name='Mr. Mahaboob Moonavath' Image={"/images/people/staff/Mahaboob.jpg"} Designation='Executive Assistant' email='mahaboob.moonavath@admin.iith.ac.in' RoomNo='Room No.: A-718/B'/>
                 </div>
+                <p className='spTitle'>Technical Personnel: </p>
+                <div className='spInfoContent'>
+                    <ProfileView Name='Mr. Anand Velmurugan' Image={"/images/people/staff/AV.jpg"} Designation='Technical Superintendent' email='anand.v@math.iith.ac.in'/>
+                </div>
             </div>
         )
     }

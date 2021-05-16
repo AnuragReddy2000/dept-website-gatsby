@@ -47,7 +47,7 @@ class FacultyPage extends React.Component<FacultyPageProps,FacultyPageState>{
                 <Helmet>
                     <title>DMath - Faculty</title>
                 </Helmet>
-                <InfoView title='Faculty:' titleColor='darkblue' info={['Our Department currently has 16 faculty members with interests ranging from pure, applied, and computational mathematics. ']}/>
+                <InfoView title='Faculty:' titleColor='darkblue' info={['Our Department currently has 17 faculty members with interests ranging from pure, applied, and computational mathematics. ']}/>
                 {this.state.isLoading ? <p style={{textAlign:'center', position:'fixed', top:'50vh', right:'45vw', color:'darkgray'}}><i>loading...</i></p> 
                 :<div className='infoContent'>
                     {this.state.facultyList.map(value => <ProfileView Name={value.name} Designation={value.designation} Area={value.areas} email={value.email} RoomNo={'Office: ' + value.roomNo} phone={'Phone: '+value.phone} link={value.link} Image={value.image}/>)}
